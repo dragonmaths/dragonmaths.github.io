@@ -1,0 +1,196 @@
+div {
+	position:absolute;
+}
+.frame {
+	left:200px;
+	top:50px;
+	width:960px;
+	height:360px;
+	clip: rect(0px,960px,360px,0px);
+}
+.scene {
+	background:url("../images/back5.jpg");
+	width:960px;
+	height:360px;
+}
+
+
+#dragon_blue {
+	background:url("../images/blue_frames.png");
+}
+
+.end_blue_dragon {
+	left:-443px;
+	top:-178px;	
+	width:252px;
+	height:205px;
+}
+
+.blue_dragon {
+	left:-443px;
+	top:-178px;	
+	width:252px;
+	height:205px;
+	animation:
+		blue_dragon_fly 0.25s 0s steps(9) alternate 100,
+		blue_dragon_move 5s ;
+	-webkit-animation:
+		blue_dragon_fly 0.25s 0s steps(9) alternate 100,
+		blue_dragon_move 5s ;
+}
+
+@keyframes blue_dragon_fly {
+	from     { background-position: 0 0 }
+    to   { background-position: -2268px 0 }
+}
+
+@-webkit-keyframes blue_dragon_fly  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -2268px 0 }
+}
+
+@keyframes blue_dragon_move {
+	0% {left: -443px; top: -178px }
+	4% {left: -382px; top: -141px }
+	8% {left: -322px; top: -106px }
+	13% {left: -261px; top: -67px }
+	17% {left: -260px; top: -38px }
+	21% {left: -199px; top: -12px }
+	25% {left: -137px; top: 12px }
+	29% {left: -76px; top: 33px }
+	33% {left: -14px; top: 52px }
+	38% {left: 48px; top: 71px }
+	42% {left: 109px; top: 84px }
+	46% {left: 171px; top: 94px }
+	50% {left: 232px; top: 102px }
+	54% {left: 294px; top: 107px }
+	58% {left: 355px; top: 110px }
+	63% {left: 417px; top: 109px }
+	67% {left: 478px; top: 106px }
+	71% {left: 540px; top: 100px }
+	75% {left: 601px; top: 92px }
+	79% {left: 663px; top: 81px }
+	83% {left: 724px; top: 68px }
+	88% {left: 786px; top: 47px }
+	92% {left: 847px; top: 28px }
+	96% {left: 909px; top: 6px }
+	100% {left: 970px; top: -18px }
+}
+
+@-webkit-keyframes blue_dragon_move { /* Safari and Chrome */
+	0% {left: -443px; top: -178px }
+	4% {left: -382px; top: -141px }
+	8% {left: -322px; top: -106px }
+	13% {left: -261px; top: -67px }
+	17% {left: -260px; top: -38px }
+	21% {left: -199px; top: -12px }
+	25% {left: -137px; top: 12px }
+	29% {left: -76px; top: 33px }
+	33% {left: -14px; top: 52px }
+	38% {left: 48px; top: 71px }
+	42% {left: 109px; top: 84px }
+	46% {left: 171px; top: 94px }
+	50% {left: 232px; top: 102px }
+	54% {left: 294px; top: 107px }
+	58% {left: 355px; top: 110px }
+	63% {left: 417px; top: 109px }
+	67% {left: 478px; top: 106px }
+	71% {left: 540px; top: 100px }
+	75% {left: 601px; top: 92px }
+	79% {left: 663px; top: 81px }
+	83% {left: 724px; top: 68px }
+	88% {left: 786px; top: 47px }
+	92% {left: 847px; top: 28px }
+	96% {left: 909px; top: 6px }
+	100% {left: 970px; top: -18px }
+}
+
+#dragon_red {
+	background:url("../images/red_frames.png");
+}
+
+.end_red_dragon {
+	left:970px;
+	top:-18px;	
+	width:252px;
+	height:205px;
+}
+
+.red_dragon {
+	left:970px;
+	top:-18px;	
+	width:252px;
+	height:205px;
+	animation:
+		red_dragon_fly 0.25s 0s steps(9) alternate 100,
+		red_dragon_move 5s ;
+	-webkit-animation:
+		red_dragon_fly 0.25s 0s steps(9) alternate 100,
+		red_dragon_move 5s ;
+}
+
+@keyframes red_dragon_fly {
+	from     { background-position: 0 0 }
+    to   { background-position: -2268px 0 }
+}
+
+@-webkit-keyframes red_dragon_fly  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -2268px 0 }
+}
+
+@keyframes red_dragon_move {
+	0% {left: 970px; top: -18px }
+	4% {left: 909px; top: 6px }
+	8% {left: 847px; top: 28px }
+	13% {left: 786px; top: 47px }
+	17% {left: 724px; top: 68px }
+	21% {left: 663px; top: 81px }
+	25% {left: 601px; top: 92px }
+	29% {left: 540px; top: 100px }
+	33% {left: 478px; top: 106px }
+	38% {left: 417px; top: 109px }
+	42% {left: 355px; top: 110px }
+	46% {left: 294px; top: 107px }
+	50% {left: 232px; top: 102px }
+	54% {left: 171px; top: 94px }
+	58% {left: 109px; top: 84px }
+	63% {left: 48px; top: 71px }
+	67% {left: -14px; top: 52px }
+	71% {left: -76px; top: 33px }
+	75% {left: -137px; top: 12px }
+	79% {left: -199px; top: -12px }
+	83% {left: -260px; top: -38px }
+	88% {left: -261px; top: -67px }
+	92% {left: -322px; top: -106px }
+	96% {left: -382px; top: -141px }
+	100% {left: -443px; top: -178px }
+}
+
+@-webkit-keyframes red_dragon_move { /* Safari and Chrome */
+	0% {left: 970px; top: -18px }
+	4% {left: 909px; top: 6px }
+	8% {left: 847px; top: 28px }
+	13% {left: 786px; top: 47px }
+	17% {left: 724px; top: 68px }
+	21% {left: 663px; top: 81px }
+	25% {left: 601px; top: 92px }
+	29% {left: 540px; top: 100px }
+	33% {left: 478px; top: 106px }
+	38% {left: 417px; top: 109px }
+	42% {left: 355px; top: 110px }
+	46% {left: 294px; top: 107px }
+	50% {left: 232px; top: 102px }
+	54% {left: 171px; top: 94px }
+	58% {left: 109px; top: 84px }
+	63% {left: 48px; top: 71px }
+	67% {left: -14px; top: 52px }
+	71% {left: -76px; top: 33px }
+	75% {left: -137px; top: 12px }
+	79% {left: -199px; top: -12px }
+	83% {left: -260px; top: -38px }
+	88% {left: -261px; top: -67px }
+	92% {left: -322px; top: -106px }
+	96% {left: -382px; top: -141px }
+	100% {left: -443px; top: -178px }
+}

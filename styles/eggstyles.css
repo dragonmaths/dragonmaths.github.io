@@ -1,0 +1,17 @@
+#egg_red {
+	left:400px;
+	top:50px;	
+	width:23px;
+	height:29px;
+	background:url("../images/redEgg.png");
+	background-size:contain;
+}
+
+#egg_blue {
+	left:450px;
+	top:50px;	
+	width:23px;
+	height:29px;
+	background:url("../images/blueEgg.png");
+	background-size:contain;
+}

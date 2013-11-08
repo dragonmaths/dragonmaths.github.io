@@ -1,0 +1,137 @@
+#addback {
+	left:1186px;
+	top:50px;
+	width:114px;
+	height:126px;
+	background:url("../images/addback.jpg");
+	background-size:contain;
+	clip: rect(0px,114px,126px,0px);
+}
+
+#subback {
+	left:60px;
+	top:50px;
+	width:114px;
+	height:126px;
+	background:url("../images/subback.jpg");
+	background-size:contain;
+	clip: rect(0px,114px,126px,0px);
+}
+
+#add {
+	left:0px;
+	top:0px;
+	width:114px;
+	height:126px;
+	background:url("../images/addbase.jpg");
+	background-size:contain;
+}
+
+#sub {
+	left:0px;
+	top:0px;
+	width:114px;
+	height:126px;
+	background:url("../images/subbase.jpg");
+	background-size:contain;
+}
+
+#little_blue {
+	background:url("../images/little_blue_frames.png");
+	left:-10px;
+	top:-25px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+}
+
+.end_blue_little {
+	left:-10px;
+	top:-25px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+}
+
+.blue_little {
+	left:-10px;
+	top:-25px;	
+	width:126px;
+	height:102px;
+	animation:
+		blue_little_fly 0.25s 0s steps(9) alternate 10,
+		blue_little_move 2s ;
+	-webkit-animation:
+		blue_little_fly 0.25s 0s steps(9) alternate 10,
+		blue_little_move 2s ;
+}
+
+@keyframes blue_little_fly {
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@-webkit-keyframes blue_little_fly  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@keyframes blue_little_move {
+	0% {left: -10px; top: -25px }
+	100% {left: 120px; top: -10px }
+}
+
+@-webkit-keyframes blue_little_move { /* Safari and Chrome */
+	0% {left: -10px; top: -25px }
+	100% {left: 120px; top: -10px }
+}
+
+#little_red {
+	background:url("../images/little_red_frames.png");
+	left:0px;
+	top:-5px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+}
+
+.end_red_little {
+	left:0px;
+	top:-5px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+}
+
+.red_little {
+	left:0px;
+	top:-5px;	
+	width:126px;
+	height:102px;
+	animation:
+		red_little_fly 0.25s 0s steps(9) alternate 10,
+		red_little_move 2s ;
+	-webkit-animation:
+		red_little_fly 0.25s 0s steps(9) alternate 10,
+		red_little_move 2s ;
+}
+
+@keyframes red_little_fly {
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@-webkit-keyframes red_little_fly  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@keyframes red_little_move {
+	0%   {left: 0px; top: -5px }
+	100% {left: -130px; top: -10px }
+}
+
+@-webkit-keyframes red_little_move { /* Safari and Chrome */
+	0%   {left: 0px; top: -5px }
+	100% {left: -130px; top: -10px }
+}
