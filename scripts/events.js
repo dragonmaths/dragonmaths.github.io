@@ -12,19 +12,20 @@
 	}
 	
 	function start_blue() {
-        $('dragon_blue').className = 'blue_dragon';
         $('little_blue').className = 'blue_little';
         $('sub').style.visibility='hidden';
 	}
 	
 	function end_little_blue() {
 		$('dragon_blue').className = 'blue_dragon';
+		$('egg_blue').className = 'blue_egg';
 		$('little_blue').className = 'end_blue_little';
 		$('little_blue').style.visibility='hidden';
 	}
 	
 	function end_blue() {
 		$('dragon_blue').className = 'end_blue_dragon';
+		$('egg_blue').className = 'end_blue_egg';
 		$('sub').style.visibility='visible';
 		$('little_blue').style.visibility='visible';
 	}
@@ -37,12 +38,14 @@
 	
 	function end_little_red() {
 		$('dragon_red').className = 'red_dragon';
+		$('egg_red').className = 'red_egg';
 		$('little_red').className = 'end_red_little';
 		$('little_red').style.visibility='hidden';
 	}
 	
 	function end_red() {
 		$('dragon_red').className = 'end_red_dragon';
+		$('egg_red').className = 'end_red_egg';
 		$('add').style.visibility='visible';
 		$('little_red').style.visibility='visible';
 	}

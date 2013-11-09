@@ -59,10 +59,10 @@
 	width:126px;
 	height:102px;
 	animation:
-		blue_little_fly 0.25s 0s steps(9) alternate 10,
+		blue_little_fly 0.25s 0s steps(9) alternate 15,
 		blue_little_move 2s ;
 	-webkit-animation:
-		blue_little_fly 0.25s 0s steps(9) alternate 10,
+		blue_little_fly 0.25s 0s steps(9) alternate 15,
 		blue_little_move 2s ;
 }
 

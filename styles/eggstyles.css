@@ -1,9 +1,9 @@
-#egg_red {
-	left:400px;
-	top:50px;	
+.placed_blue {
+	left:460px;
+	top:330px;	
 	width:23px;
 	height:29px;
-	background:url("../images/redEgg.png");
+	background:url("../images/blueEgg.png");
 	background-size:contain;
 }
 
@@ -14,4 +14,96 @@
 	height:29px;
 	background:url("../images/blueEgg.png");
 	background-size:contain;
+}
+
+.placed_red {
+	left:500px;
+	top:330px;	
+	width:23px;
+	height:29px;
+	background:url("../images/blueEgg.png");
+	background-size:contain;
+}
+
+#egg_red {
+	left:1070px;
+	top: 100px;	
+	width:23px;
+	height:29px;
+	background:url("../images/redEgg.png");
+	background-size:contain;
+}
+
+.end_red_egg {
+	left:1070px;
+	top:100px;	
+	width:23px;
+	height:29px;
+}
+
+.red_egg {
+	left:1070px;
+	top:100px;	
+	width:23px;
+	height:29px;
+	animation:
+		red_egg_move 5s ;
+	-webkit-animation:
+		red_egg_move 5s ;
+}
+
+@keyframes red_egg_move {
+	0% {left: 1100px; top: 112px }
+	4% {left: 1039px; top: 136px }
+	8% {left: 977px; top: 158px }
+	13% {left: 916px; top: 177px }
+	17% {left: 854px; top: 198px }
+	21% {left: 793px; top: 211px }
+	25% {left: 731px; top: 222px }
+	29% {left: 670px; top: 230px }
+	33% {left: 608px; top: 236px }
+	38% {left: 547px; top: 239px }
+	42% {left: 485px; top: 240px }
+	46% {left: 424px; top: 237px }
+	50% {left: 362px; top: 232px }
+	54% {left: 301px; top: 224px }
+	58% {left: 239px; top: 214px }
+	63% {left: 178px; top: 201px }
+	67% {left: 116px; top: 182px }
+	71% {left: 54px; top: 163px }
+	75% {left: -7px; top: 142px }
+	79% {left: -69px; top: 118px }
+	83% {left: -130px; top: 92px }
+	88% {left: -131px; top: 63px }
+	92% {left: -192px; top: 24px }
+	96% {left: -252px; top: -11px }
+	100% {left: 460px; top: 330px }
+}
+
+@-webkit-keyframes red_egg_move { /* Safari and Chrome */
+	0% {left: 1100px; top: 112px }
+	4% {left: 1039px; top: 136px }
+	8% {left: 977px; top: 158px }
+	13% {left: 916px; top: 177px }
+	17% {left: 854px; top: 198px }
+	21% {left: 793px; top: 211px }
+	25% {left: 731px; top: 222px }
+	29% {left: 670px; top: 230px }
+	33% {left: 608px; top: 236px }
+	38% {left: 547px; top: 239px }
+	42% {left: 485px; top: 240px }
+	46% {left: 424px; top: 237px }
+	50% {left: 362px; top: 232px }
+	54% {left: 301px; top: 224px }
+	58% {left: 239px; top: 214px }
+	63% {left: 178px; top: 201px }
+	67% {left: 116px; top: 182px }
+	71% {left: 54px; top: 163px }
+	75% {left: -7px; top: 142px }
+	79% {left: -69px; top: 118px }
+	83% {left: -130px; top: 92px }
+	88% {left: -131px; top: 63px }
+	92% {left: -192px; top: 24px }
+	96% {left: -252px; top: -11px }
+	100% {left: -313px; top: -48px }
 }

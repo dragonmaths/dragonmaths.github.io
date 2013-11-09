@@ -9,14 +9,14 @@ div {
 	clip: rect(0px,960px,360px,0px);
 }
 .scene {
-	background:url("../images/back5.jpg");
+	background:url(../images/back5.jpg);
 	width:960px;
 	height:360px;
 }
 
 
 #dragon_blue {
-	background:url("../images/blue_frames.png");
+	background:url(../images/blue_frames.png);
 }
 
 .end_blue_dragon {
@@ -106,7 +106,7 @@ div {
 }
 
 #dragon_red {
-	background:url("../images/red_frames.png");
+	background:url(../images/red_frames.png);
 }
 
 .end_red_dragon {
