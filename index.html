@@ -5,13 +5,16 @@
 	<link rel="stylesheet" type="text/css" href="styles/littledragonstyles.css"> 
 	<link rel="stylesheet" type="text/css" href="styles/eggstyles.css"> 
 	<script type="text/javascript" src="scripts/events.js"></script>
+	<script type="text/javascript" src="scripts/eggs.js"></script>
 	<script type="text/javascript">
+		var redEggImg=new Image();
+		redEggImg.src="images/redEggLarge.png";
 		window.onload=main;
 	</script>
 </head>
 <body>
 
-	<div class="frame">
+	<div id="scene_frame" class="frame">
 	 	<div id="scene" class="scene"></div>
 		<div id="dragon_blue"></div>
 		<div id="egg_red"></div>
@@ -31,4 +34,3 @@
 	</div>
 </body>
 </html>
-

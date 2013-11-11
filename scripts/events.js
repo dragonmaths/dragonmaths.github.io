@@ -9,6 +9,7 @@
 		$('dragon_red').addEventListener('animationend', end_red, false);
 		$('little_blue').addEventListener('animationend', end_little_blue, false);
 		$('little_red').addEventListener('animationend', end_little_red, false);
+		
 	}
 	
 	function start_blue() {
@@ -31,9 +32,16 @@
 	}
 	
 	function start_red() {
-        
+		var red_stone=new egg('red');
         $('little_red').className = 'red_little';
         $('add').style.visibility='hidden';
+        $('dragon_red').addEventListener('animationiteration', red_egg_check, false);
+        
+        function red_egg_check() {
+			if((++red_stone.iterations)==7) {
+				red_stone.add();
+			}
+		}
 	}
 	
 	function end_little_red() {
