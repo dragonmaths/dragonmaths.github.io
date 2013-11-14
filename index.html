@@ -3,12 +3,17 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/dragonstyles.css"> 
 	<link rel="stylesheet" type="text/css" href="styles/littledragonstyles.css"> 
-	<link rel="stylesheet" type="text/css" href="styles/eggstyles.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/eggstyles.css">
+	<link rel="stylesheet" type="text/css" href="styles/shadowstyles.css"> 
 	<script type="text/javascript" src="scripts/events.js"></script>
 	<script type="text/javascript" src="scripts/eggs.js"></script>
 	<script type="text/javascript">
 		var redEggImg=new Image();
 		redEggImg.src="images/redEggLarge.png";
+		var blueEggImg=new Image();
+		blueEggImg.src="images/blueEggLarge.png";
+		var shadowImg=new Image();
+		shadowImg.src="images/shadow.png";
 		window.onload=main;
 	</script>
 </head>
@@ -31,6 +36,12 @@
 	<div id="subback">
 		<div id="little_blue"></div>
 		<div id="sub"></div>
+	</div>
+	
+	<div id="addchoice">
+		<div id='blueaddchoice'></div>
+		<div id="redaddchoice"></div>
+		<div id="handaddchoice"></div>
 	</div>
 </body>
 </html>

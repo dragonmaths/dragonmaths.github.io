@@ -6,6 +6,7 @@
 	background:url("../images/addback.jpg");
 	background-size:contain;
 	clip: rect(0px,114px,126px,0px);
+	cursor:pointer;
 }
 
 #subback {
@@ -16,6 +17,7 @@
 	background:url("../images/subback.jpg");
 	background-size:contain;
 	clip: rect(0px,114px,126px,0px);
+	cursor:pointer;
 }
 
 #add {

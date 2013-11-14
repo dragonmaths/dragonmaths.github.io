@@ -16,12 +16,15 @@ div {
 
 
 #dragon_blue {
+	left:970px;
+	top:-18px;
+	width:252px;
+	height:205px;
 	background:url(../images/blue_frames.png);
 }
 
 .end_blue_dragon {
-	left:970px;
-	top:-18px;	
+		
 	width:252px;
 	height:205px;
 }
@@ -29,8 +32,6 @@ div {
 .blue_dragon {
 	left:970px;
 	top:-18px;	
-	width:252px;
-	height:205px;
 	animation:
 		blue_dragon_fly 0.25s 0s steps(9) alternate 20,
 		blue_dragon_move 5s ;
