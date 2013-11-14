@@ -12,6 +12,7 @@
 	height:124px;
 	background:url("../images/bluestone.png");
 	background-size:contain;
+	cursor:pointer;
 }
 
 #redaddchoice {
@@ -21,6 +22,7 @@
 	height:124px;
 	background:url("../images/redstone.png");
 	background-size:contain;
+	cursor:pointer;
 }
 
 #handaddchoice {
@@ -30,17 +32,49 @@
 	height:95px;
 	background:url("../images/hand.png");
 	background-size:contain;
+}
+
+.handstart {
 	transform: rotate(30deg);
 	transform-origin:50% 100%;
 }
 
-#egg_blue {
-	left:-100px;
-	top:50px;	
-	width:23px;
-	height:29px;
-	background:url("../images/blueEgg.png");
-	background-size:contain;
+.handtored {
+	transform: rotate(30deg);
+	transform-origin:50% 100%;
+	animation:
+		hand_to_red 1s;
+	-webkit-animation:
+		hand_to_red 1s;
+}
+
+.handtoblue {
+	transform: rotate(-30deg);
+	transform-origin:50% 100%;
+	animation:
+		hand_to_blue 1s;
+	-webkit-animation:
+		hand_to_blue 1s;
+}
+
+@keyframes hand_to_red {
+	from {transform: rotate(-30deg) }
+	to {transform: rotate(30deg) }
+}
+
+@keyframes hand_to_blue {
+	from {transform: rotate(30deg) }
+	to {transform: rotate(-30deg) }
+}
+
+@-webkit-keyframes hand_to_red {
+	from {-webkit-transform: rotate(-30deg) }
+	to {-webkit-transform: rotate(30deg) }
+}
+
+@-webkit-keyframes hand_to_blue {
+	from {-webkit-transform: rotate(30deg) }
+	to {-webkit-transform: rotate(-30deg) }
 }
 
 #egg_red {
@@ -171,7 +205,7 @@
 }
 
 @-webkit-keyframes red_egg_move { /* Safari and Chrome */
-		0% {left: -313px; top: -48px }
+	0% {left: -313px; top: -48px }
 	4% {left: -252px; top: -11px }
 	8% {left: -192px; top: 24px }
 	13% {left: -131px; top: 63px }
@@ -475,6 +509,461 @@
 }
 
 @-webkit-keyframes red_egg_drop5 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.3825px; transform: scale(1.075) }
+	10% {left: 120.6px; top: 183.53px; transform: scale(1.15) }
+	15% {left: 123.9px; top: 185.4425px; transform: scale(1.225) }
+	20% {left: 127.2px; top: 188.12px; transform: scale(1.3) }
+	25% {left: 130.5px; top: 191.5625px; transform: scale(1.375) }
+	30% {left: 133.8px; top: 195.77px; transform: scale(1.45) }
+	35% {left: 137.1px; top: 200.7425px; transform: scale(1.525) }
+	40% {left: 140.4px; top: 206.48px; transform: scale(1.6) }
+	45% {left: 143.7px; top: 212.9825px; transform: scale(1.675) }
+	50% {left: 147px; top: 220.25px; transform: scale(1.75) }
+	55% {left: 150.3px; top: 228.2825px; transform: scale(1.825) }
+	60% {left: 153.6px; top: 237.08px; transform: scale(1.9) }
+	65% {left: 156.9px; top: 246.6425px; transform: scale(1.975) }
+	70% {left: 160.2px; top: 256.97px; transform: scale(2.05) }
+	75% {left: 163.5px; top: 268.0625px; transform: scale(2.125) }
+	80% {left: 166.8px; top: 279.92px; transform: scale(2.2) }
+	85% {left: 170.1px; top: 292.5425px; transform: scale(2.275) }
+	90% {left: 173.4px; top: 305.93px; transform: scale(2.35) }
+	95% {left: 176.7px; top: 320.0825px; transform: scale(2.425) }
+	100% {left: 180px; top: 335px; transform: scale(2.5) }
+}
+
+#egg_blue {
+	left:1070px;
+	top: 100px;	
+	width:23px;
+	height:29px;
+	background:url("../images/blueEgg.png");
+	background-size:contain;
+}
+
+.end_blue_egg {
+	left:-460px;
+	top:100px;	
+	width:23px;
+	height:29px;
+}
+
+.blue_egg {
+	left:1070px;
+	top:100px;	
+	width:23px;
+	height:29px;
+	animation:
+		blue_egg_move 5s ;
+	-webkit-animation:
+		blue_egg_move 5s ;
+}
+
+.blue_drop0 {
+	left:180px;
+	top:270px;
+	animation:
+		blue_egg_drop0 0.5s,
+		blue_egg_rotate 0.5s;
+	-webkit-animation:
+		blue_egg_drop0 0.5s,
+		blue_egg_rotate 0.5s;
+}
+
+.blue_drop1 {
+	left:180px;
+	top:280px;
+	transform: scale(1.2);
+	animation:
+		blue_egg_drop1 0.5s,
+		blue_egg_rotate 0.5s;
+	-webkit-animation:
+		blue_egg_drop1 0.5s,
+		blue_egg_rotate 0.5s;
+}
+
+.blue_drop2 {
+	left:180px;
+	top:290px;
+	transform: scale(1.4);
+	animation:
+		blue_egg_drop2 0.5s,
+		blue_egg_rotate 0.5s;
+	-webkit-animation:
+		blue_egg_drop2 0.5s,
+		blue_egg_rotate 0.5s;
+}
+
+.blue_drop3 {
+	left:180px;
+	top:300px;
+	transform: scale(1.7);
+	animation:
+		blue_egg_drop3 0.5s,
+		blue_egg_rotate 0.5s;
+	-webkit-animation:
+		blue_egg_drop3 0.5s,
+		blue_egg_rotate 0.5s;
+}
+
+.blue_drop4 {
+	left:180px;
+	top:315px;
+	transform: scale(2.1);
+	animation:
+		blue_egg_drop4 0.5s,
+		blue_egg_rotate 0.5s;
+	-webkit-animation:
+		blue_egg_drop4 0.5s,
+		blue_egg_rotate 0.5s;
+}
+
+.blue_drop5 {
+	left:180px;
+	top:335px;
+	transform: scale(2.5);
+	animation:
+		blue_egg_drop5 0.5s,
+		blue_egg_rotate 0.5s;
+	-webkit-animation:
+		blue_egg_drop5 0.5s,
+		blue_egg_rotate 0.5s;
+}
+
+
+@keyframes blue_egg_move {
+	0% {left: -313px; top: -48px }
+	4% {left: -252px; top: -11px }
+	8% {left: -192px; top: 24px }
+	13% {left: -131px; top: 63px }
+	17% {left: -130px; top: 92px }
+	21% {left: -69px; top: 118px }
+	25% {left: -7px; top: 142px }
+	29% {left: 54px; top: 163px }
+	33% {left: 116px; top: 182px; visibility:hidden }
+	38% {left: 178px; top: 201px; visibility: hidden }
+	42% {left: 239px; top: 214px; visibility: hidden }
+	46% {left: 301px; top: 224px; visibility: hidden }
+	50% {left: 362px; top: 232px; visibility: hidden }
+	54% {left: 424px; top: 237px; visibility: hidden }
+	58% {left: 485px; top: 240px; visibility: hidden }
+	63% {left: 547px; top: 239px; visibility: hidden }
+	67% {left: 608px; top: 236px; visibility: hidden }
+	71% {left: 670px; top: 230px; visibility: hidden }
+	75% {left: 731px; top: 222px; visibility: hidden }
+	79% {left: 793px; top: 211px; visibility: hidden }
+	83% {left: 854px; top: 198px; visibility: hidden }
+	88% {left: 916px; top: 177px; visibility: hidden }
+	92% {left: 977px; top: 158px; visibility: hidden }
+	96% {left: 1039px; top: 136px; visibility: hidden }
+	100% {left: 1100px; top: 112px; visibility: hidden }
+}
+
+@-webkit-keyframes blue_egg_move { /* Safari and Chrome */
+	0% {left: -313px; top: -48px }
+	4% {left: -252px; top: -11px }
+	8% {left: -192px; top: 24px }
+	13% {left: -131px; top: 63px }
+	17% {left: -130px; top: 92px }
+	21% {left: -69px; top: 118px }
+	25% {left: -7px; top: 142px }
+	29% {left: 54px; top: 163px }
+	33% {left: 116px; top: 182px; visibility:hidden }
+	38% {left: 178px; top: 201px; visibility:hidden  }
+	42% {left: 239px; top: 214px; visibility:hidden  }
+	46% {left: 301px; top: 224px; visibility:hidden  }
+	50% {left: 362px; top: 232px; visibility:hidden }
+	54% {left: 424px; top: 237px; visibility:hidden  }
+	58% {left: 485px; top: 240px; visibility:hidden  }
+	63% {left: 547px; top: 239px; visibility:hidden  }
+	67% {left: 608px; top: 236px; visibility:hidden  }
+	71% {left: 670px; top: 230px; visibility:hidden  }
+	75% {left: 731px; top: 222px; visibility:hidden  }
+	79% {left: 793px; top: 211px; visibility:hidden  }
+	83% {left: 854px; top: 198px; visibility:hidden  }
+	88% {left: 916px; top: 177px; visibility:hidden  }
+	92% {left: 977px; top: 158px; visibility:hidden  }
+	96% {left: 1039px; top: 136px; visibility:hidden  }
+	100% {left: 1100px; top: 112px; visibility:hidden  }
+}
+
+@keyframes blue_egg_rotate {
+	from {transform: rotate(0deg)}
+	to {transform: rotate(360deg)}
+}
+
+@keyframes blue_egg_drop0 {
+	0% {left: 114px; top: 182px }
+	5% {left: 117.3px; top: 182.22px }
+	10% {left: 120.6px; top: 182.88px }
+	15% {left: 123.9px; top: 183.98px }
+	20% {left: 127.2px; top: 185.52px }
+	25% {left: 130.5px; top: 187.5px }
+	30% {left: 133.8px; top: 189.92px }
+	35% {left: 137.1px; top: 192.78px }
+	40% {left: 140.4px; top: 196.08px }
+	45% {left: 143.7px; top: 199.82px }
+	50% {left: 147px; top: 204px }
+	55% {left: 150.3px; top: 208.62px }
+	60% {left: 153.6px; top: 213.68px }
+	65% {left: 156.9px; top: 219.18px }
+	70% {left: 160.2px; top: 225.12px }
+	75% {left: 163.5px; top: 231.5px }
+	80% {left: 166.8px; top: 238.32px }
+	85% {left: 170.1px; top: 245.58px }
+	90% {left: 173.4px; top: 253.28px }
+	95% {left: 176.7px; top: 261.42px }
+	100% {left: 180px; top: 270px }
+
+}
+
+@keyframes blue_egg_drop1 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.245px; transform: scale(1.01) }
+	10% {left: 120.6px; top: 182.98px; transform: scale(1.02) }
+	15% {left: 123.9px; top: 184.205px; transform: scale(1.03) }
+	20% {left: 127.2px; top: 185.92px; transform: scale(1.04) }
+	25% {left: 130.5px; top: 188.125px; transform: scale(1.05) }
+	30% {left: 133.8px; top: 190.82px; transform: scale(1.06) }
+	35% {left: 137.1px; top: 194.005px; transform: scale(1.07) }
+	40% {left: 140.4px; top: 197.68px; transform: scale(1.08) }
+	45% {left: 143.7px; top: 201.845px; transform: scale(1.09) }
+	50% {left: 147px; top: 206.5px; transform: scale(1.1) }
+	55% {left: 150.3px; top: 211.645px; transform: scale(1.11) }
+	60% {left: 153.6px; top: 217.28px; transform: scale(1.12) }
+	65% {left: 156.9px; top: 223.405px; transform: scale(1.13) }
+	70% {left: 160.2px; top: 230.02px; transform: scale(1.14) }
+	75% {left: 163.5px; top: 237.125px; transform: scale(1.15) }
+	80% {left: 166.8px; top: 244.72px; transform: scale(1.16) }
+	85% {left: 170.1px; top: 252.805px; transform: scale(1.17) }
+	90% {left: 173.4px; top: 261.38px; transform: scale(1.18) }
+	95% {left: 176.7px; top: 270.445px; transform: scale(1.19) }
+	100% {left: 180px; top: 280px; transform: scale(1.2) }
+}
+
+@keyframes blue_egg_drop2 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.27px; transform: scale(1.02) }
+	10% {left: 120.6px; top: 183.08px; transform: scale(1.04) }
+	15% {left: 123.9px; top: 184.43px; transform: scale(1.06) }
+	20% {left: 127.2px; top: 186.32px; transform: scale(1.08) }
+	25% {left: 130.5px; top: 188.75px; transform: scale(1.1) }
+	30% {left: 133.8px; top: 191.72px; transform: scale(1.12) }
+	35% {left: 137.1px; top: 195.23px; transform: scale(1.14) }
+	40% {left: 140.4px; top: 199.28px; transform: scale(1.16) }
+	45% {left: 143.7px; top: 203.87px; transform: scale(1.18) }
+	50% {left: 147px; top: 209px; transform: scale(1.2) }
+	55% {left: 150.3px; top: 214.67px; transform: scale(1.22) }
+	60% {left: 153.6px; top: 220.88px; transform: scale(1.24) }
+	65% {left: 156.9px; top: 227.63px; transform: scale(1.26) }
+	70% {left: 160.2px; top: 234.92px; transform: scale(1.28) }
+	75% {left: 163.5px; top: 242.75px; transform: scale(1.3) }
+	80% {left: 166.8px; top: 251.12px; transform: scale(1.32) }
+	85% {left: 170.1px; top: 260.03px; transform: scale(1.34) }
+	90% {left: 173.4px; top: 269.48px; transform: scale(1.36) }
+	95% {left: 176.7px; top: 279.47px; transform: scale(1.38) }
+	100% {left: 180px; top: 290px; transform: scale(1.4) }
+}
+
+@keyframes blue_egg_drop3 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.295px; transform: scale(1.035) }
+	10% {left: 120.6px; top: 183.18px; transform: scale(1.07) }
+	15% {left: 123.9px; top: 184.655px; transform: scale(1.105) }
+	20% {left: 127.2px; top: 186.72px; transform: scale(1.14) }
+	25% {left: 130.5px; top: 189.375px; transform: scale(1.175) }
+	30% {left: 133.8px; top: 192.62px; transform: scale(1.21) }
+	35% {left: 137.1px; top: 196.455px; transform: scale(1.245) }
+	40% {left: 140.4px; top: 200.88px; transform: scale(1.28) }
+	45% {left: 143.7px; top: 205.895px; transform: scale(1.315) }
+	50% {left: 147px; top: 211.5px; transform: scale(1.35) }
+	55% {left: 150.3px; top: 217.695px; transform: scale(1.385) }
+	60% {left: 153.6px; top: 224.48px; transform: scale(1.42) }
+	65% {left: 156.9px; top: 231.855px; transform: scale(1.455) }
+	70% {left: 160.2px; top: 239.82px; transform: scale(1.49) }
+	75% {left: 163.5px; top: 248.375px; transform: scale(1.525) }
+	80% {left: 166.8px; top: 257.52px; transform: scale(1.56) }
+	85% {left: 170.1px; top: 267.255px; transform: scale(1.595) }
+	90% {left: 173.4px; top: 277.58px; transform: scale(1.63) }
+	95% {left: 176.7px; top: 288.495px; transform: scale(1.665) }
+	100% {left: 180px; top: 300px; transform: scale(1.7) }
+}
+
+@keyframes blue_egg_drop4 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.3325px; transform: scale(1.055) }
+	10% {left: 120.6px; top: 183.33px; transform: scale(1.11) }
+	15% {left: 123.9px; top: 184.9925px; transform: scale(1.165) }
+	20% {left: 127.2px; top: 187.32px; transform: scale(1.22) }
+	25% {left: 130.5px; top: 190.3125px; transform: scale(1.275) }
+	30% {left: 133.8px; top: 193.97px; transform: scale(1.33) }
+	35% {left: 137.1px; top: 198.2925px; transform: scale(1.385) }
+	40% {left: 140.4px; top: 203.28px; transform: scale(1.44) }
+	45% {left: 143.7px; top: 208.9325px; transform: scale(1.495) }
+	50% {left: 147px; top: 215.25px; transform: scale(1.55) }
+	55% {left: 150.3px; top: 222.2325px; transform: scale(1.605) }
+	60% {left: 153.6px; top: 229.88px; transform: scale(1.66) }
+	65% {left: 156.9px; top: 238.1925px; transform: scale(1.715) }
+	70% {left: 160.2px; top: 247.17px; transform: scale(1.77) }
+	75% {left: 163.5px; top: 256.8125px; transform: scale(1.825) }
+	80% {left: 166.8px; top: 267.12px; transform: scale(1.88) }
+	85% {left: 170.1px; top: 278.0925px; transform: scale(1.935) }
+	90% {left: 173.4px; top: 289.73px; transform: scale(1.99) }
+	95% {left: 176.7px; top: 302.0325px; transform: scale(2.045) }
+	100% {left: 180px; top: 315px; transform: scale(2.1) }
+}
+
+@keyframes blue_egg_drop5 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.3825px; transform: scale(1.075) }
+	10% {left: 120.6px; top: 183.53px; transform: scale(1.15) }
+	15% {left: 123.9px; top: 185.4425px; transform: scale(1.225) }
+	20% {left: 127.2px; top: 188.12px; transform: scale(1.3) }
+	25% {left: 130.5px; top: 191.5625px; transform: scale(1.375) }
+	30% {left: 133.8px; top: 195.77px; transform: scale(1.45) }
+	35% {left: 137.1px; top: 200.7425px; transform: scale(1.525) }
+	40% {left: 140.4px; top: 206.48px; transform: scale(1.6) }
+	45% {left: 143.7px; top: 212.9825px; transform: scale(1.675) }
+	50% {left: 147px; top: 220.25px; transform: scale(1.75) }
+	55% {left: 150.3px; top: 228.2825px; transform: scale(1.825) }
+	60% {left: 153.6px; top: 237.08px; transform: scale(1.9) }
+	65% {left: 156.9px; top: 246.6425px; transform: scale(1.975) }
+	70% {left: 160.2px; top: 256.97px; transform: scale(2.05) }
+	75% {left: 163.5px; top: 268.0625px; transform: scale(2.125) }
+	80% {left: 166.8px; top: 279.92px; transform: scale(2.2) }
+	85% {left: 170.1px; top: 292.5425px; transform: scale(2.275) }
+	90% {left: 173.4px; top: 305.93px; transform: scale(2.35) }
+	95% {left: 176.7px; top: 320.0825px; transform: scale(2.425) }
+	100% {left: 180px; top: 335px; transform: scale(2.5) }
+}
+
+@-webkit-keyframes blue_egg_rotate {
+	from {transform: rotate(0deg)}
+	to {transform: rotate(360deg)}
+}
+
+@-webkit-keyframes blue_egg_drop0 {
+	0% {left: 114px; top: 182px }
+	5% {left: 117.3px; top: 182.22px }
+	10% {left: 120.6px; top: 182.88px }
+	15% {left: 123.9px; top: 183.98px }
+	20% {left: 127.2px; top: 185.52px }
+	25% {left: 130.5px; top: 187.5px }
+	30% {left: 133.8px; top: 189.92px }
+	35% {left: 137.1px; top: 192.78px }
+	40% {left: 140.4px; top: 196.08px }
+	45% {left: 143.7px; top: 199.82px }
+	50% {left: 147px; top: 204px }
+	55% {left: 150.3px; top: 208.62px }
+	60% {left: 153.6px; top: 213.68px }
+	65% {left: 156.9px; top: 219.18px }
+	70% {left: 160.2px; top: 225.12px }
+	75% {left: 163.5px; top: 231.5px }
+	80% {left: 166.8px; top: 238.32px }
+	85% {left: 170.1px; top: 245.58px }
+	90% {left: 173.4px; top: 253.28px }
+	95% {left: 176.7px; top: 261.42px }
+	100% {left: 180px; top: 270px }
+
+}
+
+@-webkit-keyframes blue_egg_drop1 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.245px; transform: scale(1.01) }
+	10% {left: 120.6px; top: 182.98px; transform: scale(1.02) }
+	15% {left: 123.9px; top: 184.205px; transform: scale(1.03) }
+	20% {left: 127.2px; top: 185.92px; transform: scale(1.04) }
+	25% {left: 130.5px; top: 188.125px; transform: scale(1.05) }
+	30% {left: 133.8px; top: 190.82px; transform: scale(1.06) }
+	35% {left: 137.1px; top: 194.005px; transform: scale(1.07) }
+	40% {left: 140.4px; top: 197.68px; transform: scale(1.08) }
+	45% {left: 143.7px; top: 201.845px; transform: scale(1.09) }
+	50% {left: 147px; top: 206.5px; transform: scale(1.1) }
+	55% {left: 150.3px; top: 211.645px; transform: scale(1.11) }
+	60% {left: 153.6px; top: 217.28px; transform: scale(1.12) }
+	65% {left: 156.9px; top: 223.405px; transform: scale(1.13) }
+	70% {left: 160.2px; top: 230.02px; transform: scale(1.14) }
+	75% {left: 163.5px; top: 237.125px; transform: scale(1.15) }
+	80% {left: 166.8px; top: 244.72px; transform: scale(1.16) }
+	85% {left: 170.1px; top: 252.805px; transform: scale(1.17) }
+	90% {left: 173.4px; top: 261.38px; transform: scale(1.18) }
+	95% {left: 176.7px; top: 270.445px; transform: scale(1.19) }
+	100% {left: 180px; top: 280px; transform: scale(1.2) }
+}
+
+@-webkit-keyframes blue_egg_drop2 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.27px; transform: scale(1.02) }
+	10% {left: 120.6px; top: 183.08px; transform: scale(1.04) }
+	15% {left: 123.9px; top: 184.43px; transform: scale(1.06) }
+	20% {left: 127.2px; top: 186.32px; transform: scale(1.08) }
+	25% {left: 130.5px; top: 188.75px; transform: scale(1.1) }
+	30% {left: 133.8px; top: 191.72px; transform: scale(1.12) }
+	35% {left: 137.1px; top: 195.23px; transform: scale(1.14) }
+	40% {left: 140.4px; top: 199.28px; transform: scale(1.16) }
+	45% {left: 143.7px; top: 203.87px; transform: scale(1.18) }
+	50% {left: 147px; top: 209px; transform: scale(1.2) }
+	55% {left: 150.3px; top: 214.67px; transform: scale(1.22) }
+	60% {left: 153.6px; top: 220.88px; transform: scale(1.24) }
+	65% {left: 156.9px; top: 227.63px; transform: scale(1.26) }
+	70% {left: 160.2px; top: 234.92px; transform: scale(1.28) }
+	75% {left: 163.5px; top: 242.75px; transform: scale(1.3) }
+	80% {left: 166.8px; top: 251.12px; transform: scale(1.32) }
+	85% {left: 170.1px; top: 260.03px; transform: scale(1.34) }
+	90% {left: 173.4px; top: 269.48px; transform: scale(1.36) }
+	95% {left: 176.7px; top: 279.47px; transform: scale(1.38) }
+	100% {left: 180px; top: 290px; transform: scale(1.4) }
+}
+
+@-webkit-keyframes blue_egg_drop3 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.295px; transform: scale(1.035) }
+	10% {left: 120.6px; top: 183.18px; transform: scale(1.07) }
+	15% {left: 123.9px; top: 184.655px; transform: scale(1.105) }
+	20% {left: 127.2px; top: 186.72px; transform: scale(1.14) }
+	25% {left: 130.5px; top: 189.375px; transform: scale(1.175) }
+	30% {left: 133.8px; top: 192.62px; transform: scale(1.21) }
+	35% {left: 137.1px; top: 196.455px; transform: scale(1.245) }
+	40% {left: 140.4px; top: 200.88px; transform: scale(1.28) }
+	45% {left: 143.7px; top: 205.895px; transform: scale(1.315) }
+	50% {left: 147px; top: 211.5px; transform: scale(1.35) }
+	55% {left: 150.3px; top: 217.695px; transform: scale(1.385) }
+	60% {left: 153.6px; top: 224.48px; transform: scale(1.42) }
+	65% {left: 156.9px; top: 231.855px; transform: scale(1.455) }
+	70% {left: 160.2px; top: 239.82px; transform: scale(1.49) }
+	75% {left: 163.5px; top: 248.375px; transform: scale(1.525) }
+	80% {left: 166.8px; top: 257.52px; transform: scale(1.56) }
+	85% {left: 170.1px; top: 267.255px; transform: scale(1.595) }
+	90% {left: 173.4px; top: 277.58px; transform: scale(1.63) }
+	95% {left: 176.7px; top: 288.495px; transform: scale(1.665) }
+	100% {left: 180px; top: 300px; transform: scale(1.7) }
+}
+
+@-webkit-keyframes blue_egg_drop4 {
+	0% {left: 114px; top: 182px; transform: scale(1) }
+	5% {left: 117.3px; top: 182.3325px; transform: scale(1.055) }
+	10% {left: 120.6px; top: 183.33px; transform: scale(1.11) }
+	15% {left: 123.9px; top: 184.9925px; transform: scale(1.165) }
+	20% {left: 127.2px; top: 187.32px; transform: scale(1.22) }
+	25% {left: 130.5px; top: 190.3125px; transform: scale(1.275) }
+	30% {left: 133.8px; top: 193.97px; transform: scale(1.33) }
+	35% {left: 137.1px; top: 198.2925px; transform: scale(1.385) }
+	40% {left: 140.4px; top: 203.28px; transform: scale(1.44) }
+	45% {left: 143.7px; top: 208.9325px; transform: scale(1.495) }
+	50% {left: 147px; top: 215.25px; transform: scale(1.55) }
+	55% {left: 150.3px; top: 222.2325px; transform: scale(1.605) }
+	60% {left: 153.6px; top: 229.88px; transform: scale(1.66) }
+	65% {left: 156.9px; top: 238.1925px; transform: scale(1.715) }
+	70% {left: 160.2px; top: 247.17px; transform: scale(1.77) }
+	75% {left: 163.5px; top: 256.8125px; transform: scale(1.825) }
+	80% {left: 166.8px; top: 267.12px; transform: scale(1.88) }
+	85% {left: 170.1px; top: 278.0925px; transform: scale(1.935) }
+	90% {left: 173.4px; top: 289.73px; transform: scale(1.99) }
+	95% {left: 176.7px; top: 302.0325px; transform: scale(2.045) }
+	100% {left: 180px; top: 315px; transform: scale(2.1) }
+}
+
+@-webkit-keyframes blue_egg_drop5 {
 	0% {left: 114px; top: 182px; transform: scale(1) }
 	5% {left: 117.3px; top: 182.3825px; transform: scale(1.075) }
 	10% {left: 120.6px; top: 183.53px; transform: scale(1.15) }

@@ -9,7 +9,9 @@
 		$('dragon_red').addEventListener('animationend', end_red, false);
 		$('little_blue').addEventListener('animationend', end_little_blue, false);
 		$('little_red').addEventListener('animationend', end_little_red, false);
-		
+		$('redaddchoice').addEventListener('click', setred, false);
+		$('blueaddchoice').addEventListener('click', setblue, false);
+		$('handaddchoice').className='handstart';
 	}
 	
 	function start_blue() {
@@ -19,20 +21,18 @@
 	
 	function end_little_blue() {
 		$('dragon_blue').className = 'blue_dragon';
-		$('egg_blue').className = 'blue_egg';
 		$('little_blue').className = 'end_blue_little';
 		$('little_blue').style.visibility='hidden';
 	}
 	
 	function end_blue() {
 		$('dragon_blue').className = 'end_blue_dragon';
-		$('egg_blue').className = 'end_blue_egg';
 		$('sub').style.visibility='visible';
 		$('little_blue').style.visibility='visible';
 	}
 	
 	function start_red() {
-		var red_stone=new egg('red');
+		var red_stone=new egg();
         $('little_red').className = 'red_little';
         $('add').style.visibility='hidden';
         $('dragon_red').addEventListener('animationiteration', red_egg_check, false);
@@ -46,17 +46,38 @@
 	
 	function end_little_red() {
 		$('dragon_red').className = 'red_dragon';
-		$('egg_red').className = 'red_egg';
+		if(redset) {
+			$('egg_red').className = 'red_egg';
+		}
+		else
+		{
+			$('egg_blue').className = 'blue_egg';
+		}
 		$('little_red').className = 'end_red_little';
 		$('little_red').style.visibility='hidden';
 	}
 	
 	function end_red() {
 		$('dragon_red').className = 'end_red_dragon';
-		$('egg_red').className = 'end_red_egg';
+		if(redset) {
+			$('egg_red').className = 'end_red_egg';
+		}
+		else {
+			$('egg_blue').className = 'end_blue_egg';
+		}
 		$('add').style.visibility='visible';
 		$('little_red').style.visibility='visible';
 	}
 	
+	function setred() {
+		if(redset){return};
+		redset=true;
+		$('handaddchoice').className='handtored';
+	}
 	
+	function setblue() {
+		if(!redset){return};
+		redset=false;
+		$('handaddchoice').className='handtoblue';
+	}
 	

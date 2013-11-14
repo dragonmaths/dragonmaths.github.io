@@ -1,11 +1,11 @@
-function egg(colour) {
+function egg() {
 	this.iterations=0;
 	this.layer=Math.round(Math.random()*5);
 	this.add=add;
 	
 	function add() {
 		this.egg=document.createElement('div');
-		if(colour=='red') {
+		if(redset) {
 			this.egg.style.backgroundImage='url('+redEggImg.src+')';
 		}
 		else {
@@ -25,7 +25,12 @@ function egg(colour) {
 		this.egg.shadow.style.zIndex=this.layer;
 		$('scene_frame').appendChild(this.egg.shadow);
 		$('scene_frame').appendChild(this.egg);
-		this.egg.className='red_drop'+this.layer;
+		if(redset) {
+			this.egg.className='red_drop'+this.layer;
+		}
+		else {
+			this.egg.className='blue_drop'+this.layer;
+		}
 		this.egg.shadow.className='shadow_drop'+this.layer;
 		this.egg.shdrots=[0,7,14,21,14,7];
 		
