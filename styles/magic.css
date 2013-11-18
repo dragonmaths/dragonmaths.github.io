@@ -1,0 +1,213 @@
+#flames {
+	left:-100px;
+	top:-100px;
+	width:90px;
+	height:120px;
+	background:url(../images/flames.png);
+	opacity:0;
+}
+
+.flames_off {
+	left:-100px;
+	top:-100px;
+	width:90px;
+	height:120px;
+	opacity:0;
+}
+
+
+.flames_on {
+	animation:
+		on_flames 0.25s 0s steps(8) alternate 20,
+		seen_flames 5s ;
+	-webkit-animation:
+		on_flames 0.25s 0s steps(8) alternate 20,
+		seen_flames 5s ;
+}
+
+@keyframes on_flames {
+	from     { background-position: 0 0 }
+    to   { background-position: -720px 0 }
+}
+
+@-webkit-keyframes on_flames  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -720px 0 }
+}
+
+@keyframes seen_flames {
+	0% {opacity: 0}
+	5% {opacity: 0.2}
+	10% {opacity: 0.4}
+	15% {opacity: 0.6}
+	20% {opacity: 0.8}
+	25% {opacity:1}
+	50% {opacity:1}
+	55% {opacity:1}
+	60% {opacity: 0.9}
+	65% {opacity: 0.7}
+	70% {opacity: 0.6}
+	75% {opacity:0.5}
+	80% {opacity: 0.4}
+	85% {opacity: 0.3}
+	90% {opacity: 02}
+	95% {opacity: 0.1}
+	100% {opacity: 0}
+}
+
+@-webkit-keyframes seen_flames  {/* Safari and Chrome */
+	0% {opacity: 0}
+	5% {opacity: 0.2}
+	10% {opacity: 0.4}
+	15% {opacity: 0.6}
+	20% {opacity: 0.8}
+	25% {opacity:1}
+	50% {opacity:1}
+	55% {opacity:1}
+	60% {opacity: 0.9}
+	65% {opacity: 0.7}
+	70% {opacity: 0.6}
+	75% {opacity:0.5}
+	80% {opacity: 0.4}
+	85% {opacity: 0.3}
+	90% {opacity: 02}
+	95% {opacity: 0.1}
+	100% {opacity: 0}
+}
+
+#steam {
+	left:405px;
+	top:275px;
+	
+	width:90px;
+	height:120px;
+	background:url(../images/steam.png);
+	opacity:0;
+	transform: scale(1.125);
+}
+
+.steam_off {
+	left:440px;
+	top:200px;
+	width:90px;
+	height:120px;
+	opacity:0;
+}
+
+
+.steam_on {
+	animation:
+		on_steam 0.25s 0s steps(7) alternate 20,
+		seen_steam 5s ;
+	-webkit-animation:
+		on_steam 0.25s 0s steps(7) alternate 20,
+		seen_steam 5s ;
+}
+
+@keyframes on_steam {
+	from     { background-position: 0 0 }
+    to   { background-position: -640px 0 }
+}
+
+@-webkit-keyframes on_steam  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -640px 0 }
+}
+
+@keyframes seen_steam {
+	0% {opacity: 0}
+	5% {opacity: 0.2}
+	10% {opacity: 0.4}
+	15% {opacity: 0.6}
+	20% {opacity: 0.8}
+	25% {opacity:1}
+	50% {opacity:1}
+	55% {opacity:1}
+	60% {opacity: 0.9}
+	65% {opacity: 0.7}
+	70% {opacity: 0.6}
+	75% {opacity:0.5}
+	80% {opacity: 0.4}
+	85% {opacity: 0.3}
+	90% {opacity: 02}
+	95% {opacity: 0.1}
+	100% {opacity: 0}
+}
+
+@-webkit-keyframes seen_steam  {/* Safari and Chrome */
+	0% {opacity: 0}
+	5% {opacity: 0.2}
+	10% {opacity: 0.4}
+	15% {opacity: 0.6}
+	20% {opacity: 0.8}
+	25% {opacity:1}
+	50% {opacity:1}
+	55% {opacity:1}
+	60% {opacity: 0.9}
+	65% {opacity: 0.7}
+	70% {opacity: 0.6}
+	75% {opacity:0.5}
+	80% {opacity: 0.4}
+	85% {opacity: 0.3}
+	90% {opacity: 02}
+	95% {opacity: 0.1}
+	100% {opacity: 0}
+}
+
+#rbeggs {
+	left:400px;
+	top:335px;
+	width:42px;
+	height:29px;
+	background-image: url("../images/redblue.png");
+	background-size: contain;
+	transform: scale(2.5);
+}
+
+#breggs {
+	left:400px;
+	top:335px;
+	width:42px;
+	height:29px;
+	background-image: url("../images/bluethenred.png");
+	background-size: contain;
+	transform: scale(2.5);
+}
+
+.egg_go {
+	opacity:0;
+	animation:
+		egg_fade 8s ;
+	-webkit-animation:
+		egg_fade 8s ;
+		
+}
+
+@keyframes egg_fade  {
+	from { opacity: 1 }
+    to   { opacity: 0 }
+}
+
+@-webkit-keyframes egg_fade  {
+	from { opacity: 1 }
+    to   { opacity: 0 }
+}
+
+.shadow_go {
+	opacity:0;
+	animation:
+		shadow_fade 8s ;
+	-webkit-animation:
+		shadow_fade 8s ;
+		
+}
+
+@keyframes shadow_fade  {
+	from { opacity: 0.5 }
+    to   { opacity: 0 }
+}
+
+@-webkit-keyframes shadow_fade  {
+	from { opacity: 0.5 }
+    to   { opacity: 0 }
+}
