@@ -33,17 +33,24 @@ function start_blue() {
     		setTimeout(function () {$('dragon_red2').className = 'red_dragon';$('egg_red').className = 'red_egg';},1000);
 		}
 		else {
-			
      		var egg_found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
-			egg_found.style.visibility="hidden";
+			takeOff(egg_found);
 		}
 	}
-	
 	else {
 		if(blue_count==0) {
-			
+			var red_stone=new egg('red');
+    		$('dragon_red').addEventListener('animationiteration', red_egg_check, false);
+    		var blue_stone=new egg('blue');
+    		$('dragon_red2').addEventListener('animationiteration', blue_egg_check, false);
+      		$('dragon_red').className = 'red_dragon';
+    		$('egg_red').className = 'red_egg';
+    		setTimeout(function () {$('dragon_red2').className = 'red_dragon';$('egg_blue').className = 'blue_egg';},1000);
 		}
-		this.egg.found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
+		else {
+			var egg_found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
+			takeOff(egg_found);
+		}
 	}
      
      
@@ -61,9 +68,6 @@ function start_blue() {
 }
 
 function end_little_blue() {
-	if($('dragon_red2').className != 'red_dragon') {
-		$('dragon_blue').className = 'blue_dragon';
-	}
 	$('little_blue').className = 'end_blue_little';
 	$('little_blue').style.visibility='hidden';
 }
@@ -146,6 +150,10 @@ function end_red2() {
     else {
     	var egg=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
     }
+    takeOff(egg);
+}
+
+function takeOff(egg) {
     var layer=egg.style.zIndex/10;
     $('dragon_blue').className = 'blue_dragon_'+layer;
     switch (egg.style.zIndex) {
