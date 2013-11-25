@@ -47,6 +47,25 @@
 	background-position:0 0;
 }
 
+#little_home_blue {
+	background:url("../images/little_blue_frames.png");
+	left:-10px;
+	top:-25px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+	visibility:hidden;
+}
+
+.end_blue_little_home {
+	left:-10px;
+	top:-25px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+	visibility:hidden;
+}
+
 .end_blue_little {
 	left:-10px;
 	top:-25px;	
@@ -88,6 +107,39 @@
 	100% {left: 120px; top: -10px }
 }
 
+.blue_little_home {
+	left:-10px;
+	top:-25px;	
+	width:126px;
+	height:102px;
+	animation:
+		blue_little_home_fly 0.25s 0s steps(9) alternate 5,
+		blue_little_home_move 2s ;
+	-webkit-animation:
+		blue_little_home_fly 0.25s 0s steps(9) alternate 5,
+		blue_little_home_move 2s ;
+}
+
+@keyframes blue_little_home_fly {
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@-webkit-keyframes blue_little_home_fly  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@keyframes blue_little_home_move {
+	0% {left: -100px; top: -25px }
+	100% {left: -10px; top: -25px }
+}
+
+@-webkit-keyframes blue_little_home_move { /* Safari and Chrome */
+	0% {left: -100px; top: -25px }
+	100% {left: -10px; top: -25px }
+}
+
 #little_red {
 	background:url("../images/little_red_frames.png");
 	left:0px;
@@ -95,6 +147,25 @@
 	width:126px;
 	height:102px;
 	background-position:0 0;
+}
+
+#little_home_red {
+	background:url("../images/little_red_frames.png");
+	left:0px;
+	top:-5px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;
+	visibility:hidden;
+}
+
+.end_red_little_home {
+	left:0px;
+	top:-5px;	
+	width:126px;
+	height:102px;
+	background-position:0 0;;
+	visibility:hidden;
 }
 
 .end_red_little {
@@ -136,4 +207,37 @@
 @-webkit-keyframes red_little_move { /* Safari and Chrome */
 	0%   {left: 0px; top: -5px }
 	100% {left: -130px; top: -10px }
+}
+
+.red_little_home {
+	left:0px;
+	top:-5px;	
+	width:126px;
+	height:102px;
+	animation:
+		red_little_home_fly 0.25s 0s steps(9) alternate 5,
+		red_little_home_move 2s ;
+	-webkit-animation:
+		red_little_home_fly 0.25s 0s steps(9) alternate 5,
+		red_little_home_move 2s ;
+}
+
+@keyframes red_little_home_fly {
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@-webkit-keyframes red_little_home_fly  {/* Safari and Chrome */
+	from { background-position: 0 0 }
+    to   { background-position: -1134px 0 }
+}
+
+@keyframes red_little_home_move {
+	0%   {left: 120px; top: -5px }
+	100% {left: 0px; top: -5px }
+}
+
+@-webkit-keyframes red_little_home_move { /* Safari and Chrome */
+	0%   {left: 120px; top: -5px }
+	100% {left: 0px; top: -5px }
 }

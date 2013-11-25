@@ -1,10 +1,12 @@
-function egg() {
+function egg(col) {
 	this.iterations=0;
 	this.layer=Math.round(Math.random()*5);
+	this.col=col;	
 	this.add=add;
 	
 	function add() {
 		this.egg=document.createElement('div');
+		this.egg.col=this.col;
 		this.egg.style.zIndex=this.layer*10;
 		switch (this.egg.style.zIndex) {
 			case "0":
@@ -43,8 +45,8 @@ function egg() {
 				var y=335;
 				var shtp=100;
 			break;
-		}
-		if(redset) {
+		}	
+		if(this.col=='red') {
 			this.egg.style.backgroundImage='url('+redEggImg.src+')';
 			this.egg.id="eggred"+(egg_count++);
 			red_count++;
@@ -118,8 +120,8 @@ function egg() {
 		this.egg.shadow.style.height=(28*r)+"px";
 		this.egg.shadow.style.zIndex=this.layer;
 		$('scene').appendChild(this.egg.shadow);
-		$('scene').appendChild(this.egg);
-		if(redset) {
+		$('scene').appendChild(this.egg);		
+		if(this.col=='red') {
 			this.egg.className='red_drop'+this.layer;
 		}
 		else {
@@ -127,21 +129,7 @@ function egg() {
 		}
 		this.egg.shadow.className='shadow_drop'+this.layer;
 		this.egg.shdrots=[0,7,14,21,14,7];
-		
-		function findEgg(elm,c,n) {
-			var i=0;
-			while (i<n) {
-				elm=elm.nextSibling;
-				while (elm && elm.nodeName !="DIV") {
-					elm = elm.nextSibling;
-				}
-				if(elm.id.substr(0,4) =="egg"+c) {
-					i++;
-				}
-			} 
-   			return elm;
-		}
-		
+			
 		function place_egg(egg) {
 			if(dist+ds<s) {
 				dist+=ds;
@@ -159,6 +147,12 @@ function egg() {
 				window.clearTimeout(egg_timer);
 				egg.shadow.style.transform='rotate(0deg)';
 				var w = dr % 360;
+				if (w<5) {
+					w=10;
+				}
+				if(w>355) {
+					w=350;
+				}
 				if(w>180) {
 					w-=360;
 				}
@@ -188,8 +182,8 @@ function egg() {
 					if(Math.abs(w)<5) {
 						egg.style.transform='rotate(0deg)';
 						egg.shadow.style.transform='rotate(0deg)';
-						if(red_count>0 && blue_count>0) {
-							if(redset) {
+						if(red_count>0 && blue_count>0) {							
+							if(egg.col=='red') {
 								switch (egg.style.zIndex) {
 									case "0":
 										var scl=0.45;
@@ -281,25 +275,27 @@ function egg() {
 									break;
 								}
 							}
-							red_count--;
-							blue_count--;
-							$('flames').egg=egg;
-							$('flames').style.left=parseInt(egg.style.left)+fdl+"px";
-							$('flames').style.top=parseInt(egg.style.top)+fdt+"px";
-							$('flames').style.opacity=0;
-							$('flames').style.transform= 'scale('+scl+')';
-							$('flames').style.zIndex=parseInt(egg.style.zIndex)+5;
-							$('steam').style.left=parseInt(egg.style.left)+sdl+"px";
-							$('steam').style.top=parseInt(egg.style.top)+sdt+"px";
-							$('steam').style.opacity=0;
-							$('steam').style.transform= 'scale('+scl+')';
-							$('steam').style.zIndex=parseInt(egg.style.zIndex)+5;
-							$('flames').className='flames_on';
-							$('steam').className='steam_on';
-							egg.className='egg_go';
-							egg.found.className='egg_go';
-							egg.shadow.className='shadow_go';
-							egg.found.shadow.className='shadow_go';
+							if(flames_on) {
+								red_count--;
+								blue_count--;
+								$('flames').egg=egg;
+								$('flames').style.left=parseInt(egg.style.left)+fdl+"px";
+								$('flames').style.top=parseInt(egg.style.top)+fdt+"px";
+								$('flames').style.opacity=0;
+								$('flames').style.transform= 'scale('+scl+')';
+								$('flames').style.zIndex=parseInt(egg.style.zIndex)+5;
+								$('steam').style.left=parseInt(egg.style.left)+sdl+"px";
+								$('steam').style.top=parseInt(egg.style.top)+sdt+"px";
+								$('steam').style.opacity=0;
+								$('steam').style.transform= 'scale('+scl+')';
+								$('steam').style.zIndex=parseInt(egg.style.zIndex)+5;
+								$('flames').className='flames_on';
+								$('steam').className='steam_on';
+								egg.className='egg_go';
+								egg.found.className='egg_go';
+								egg.shadow.className='shadow_go';
+								egg.found.shadow.className='shadow_go';
+							}
 						}		
 					}
 					else {
@@ -332,5 +328,19 @@ function egg() {
 			}
 		}
 	}
+}
+
+function findEgg(elm,c,n) {
+	var i=0;
+	while (i<n) {
+		elm=elm.nextSibling;
+		while (elm && elm.nodeName !="DIV") {
+			elm = elm.nextSibling;
+		}
+		if(elm.id.substr(0,4) =="egg"+c) {
+			i++;
+		}
+	} 
+   	return elm;
 }
 
