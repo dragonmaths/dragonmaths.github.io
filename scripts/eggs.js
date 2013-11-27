@@ -1,6 +1,6 @@
 function egg(col) {
 	this.iterations=0;
-	this.layer=Math.round(Math.random()*5);
+	this.layer=Math.round(Math.random()*5);			
 	this.col=col;	
 	this.add=add;
 	
@@ -40,7 +40,7 @@ function egg(col) {
 				var shtp=100;
 			break;
 			case "50":
-				var s=Math.random()*780+182;
+				var s=Math.random()*720+220;
 				var r=2.5;
 				var y=335;
 				var shtp=100;

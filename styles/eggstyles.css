@@ -1,13 +1,23 @@
 #addchoice {
-	left:580px;
-	top:420px;
+	left:420px;
+	top:300px;
 	width:202px;
-	height:124px;
+	height:179px;
+
+}
+
+#back3D {
+	left:-8px;
+	top:0px;
+	width:215px;
+	height:55px;
+	background:url("../images/back3d.png");
+	background-size:contain;
 }
 
 #blueaddchoice {
 	left:0px;
-	top:0px;
+	top:36px;
 	width:101px;
 	height:124px;
 	background:url("../images/bluestone.png");
@@ -17,7 +27,7 @@
 
 #redaddchoice {
 	left:101px;
-	top:0px;
+	top:36px;
 	width:98px;
 	height:124px;
 	background:url("../images/redstone.png");
@@ -27,7 +37,7 @@
 
 #handaddchoice {
 	left:90px;
-	top:29px;
+	top:65px;
 	width:23px;
 	height:95px;
 	background:url("../images/hand.png");

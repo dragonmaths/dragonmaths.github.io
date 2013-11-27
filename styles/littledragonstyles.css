@@ -1,6 +1,6 @@
 #addback {
-	left:1186px;
-	top:50px;
+	left:870px;
+	top:82px;
 	width:114px;
 	height:126px;
 	background:url("../images/addback.jpg");
@@ -11,7 +11,7 @@
 
 #subback {
 	left:60px;
-	top:50px;
+	top:82px;
 	width:114px;
 	height:126px;
 	background:url("../images/subback.jpg");
@@ -29,6 +29,32 @@
 	background-size:contain;
 }
 
+#add3ddown {
+	top:147px;
+	left:830px;
+	width:40px;
+	height:50px;
+	background-color: #BBBBBB;
+	transform:skew(0deg,30deg);
+}
+
+#add3dmid {
+	top:125px;
+	left:830px;
+	width:40px;
+	height:50px;
+	background-color: #BBBBBB;
+}
+
+#add3dup {
+	top:94px;
+	left:830px;
+	width:40px;
+	height:50px;
+	background-color: #BBBBBB;
+	transform:skew(0deg,-30deg);
+}
+
 #sub {
 	left:0px;
 	top:0px;
@@ -36,6 +62,32 @@
 	height:126px;
 	background:url("../images/subbase.jpg");
 	background-size:contain;
+}
+
+#sub3ddown {
+	top:94px;
+	left:174px;
+	width:40px;
+	height:50px;
+	background-color: #BBBBBB;
+	transform:skew(0deg,30deg);
+}
+
+#sub3dmid {
+	top:125px;
+	left:174px;
+	width:40px;
+	height:50px;
+	background-color: #BBBBBB;
+}
+
+#sub3dup {
+	top:147px;
+	left:174px;
+	width:40px;
+	height:50px;
+	background-color: #BBBBBB;
+	transform:skew(0deg,-30deg);
 }
 
 #little_blue {

@@ -160,43 +160,49 @@ function takeOff(egg) {
 		case "0":
 			var t=130;
 			var l=150;
+			var r=1;
 		break;
 		case "10":
 			var t=130;
 			var l=140;
+			var r=1.2;
 		break;
 		case "20":
 			var t=140;
 			var l=140;
+			var r=1.4;
 		break;
 		case "30":
 			var t=140;
 			var l=140;
+			var r=1.7;
 		break;
 		case "40":
 			var t=165;
 			var l=140;
+			var r=2.1;
 		break;
 		case "50":
 			var t=185;
 			var l=140;
+			var r=2.5;
 		break;
 	}
-	$('dragon_blue').style.left="970px";
+	$('dragon_blue').style.left=(960+100*r)+"px";
     $('dragon_blue').style.top=(parseInt(egg.style.top)-t)+"px";
 	var egg_left=parseInt(egg.style.left)-l;    
 	blueFetch();
 		
 	function blueFetch() {
-		$('dragon_blue').style.left=(parseInt($('dragon_blue').style.left)-10)+"px";		
+		$('dragon_blue').style.left=(parseInt($('dragon_blue').style.left)-15*r)+"px";		
 		if(parseInt($('dragon_blue').style.left)<egg_left) {
 			$('dragon_blue').style.top=(parseInt($('dragon_blue').style.top)-5)+"px";
 			egg.style.left=(parseInt($('dragon_blue').style.left)+l)+"px";
 			egg.style.top=(parseInt($('dragon_blue').style.top)+t)+"px";
 			egg.shadow.style.top=(parseInt(egg.shadow.style.top)+5)+"px";
 			egg.shadow.style.backgroundSize='contain';
-			egg.shadow.style.width=(parseInt(egg.shadow.style.width)*1.1)+"px";
-			egg.shadow.style.height=(parseInt(egg.shadow.style.height)*1.1)+"px";			
+			egg.shadow.style.width=(parseInt(egg.shadow.style.width)*r)+"px";
+			egg.shadow.style.height=(parseInt(egg.shadow.style.height)*r)+"px";			
 		}
 		if(parseInt($('dragon_blue').style.left)>-443) {
 			var blue_fetch=setTimeout(blueFetch,100);
