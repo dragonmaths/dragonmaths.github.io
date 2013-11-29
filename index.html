@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		#Loadscreen {
+			margin:1% 1% 1% 1%;
+			width:96%;
+			height:96%;
+			background-color:#FFFFFF;
+			z-index: 100;
+		}
+		
+		#Loadscreen img {
+			margin:15% 1% 1% 40%;
+		}
+	</style>
 	<link rel="stylesheet" type="text/css" href="styles/dragonstyles.css"> 
 	<link rel="stylesheet" type="text/css" href="styles/littledragonstyles.css"> 
 	<link rel="stylesheet" type="text/css" href="styles/eggstyles.css">
 	<link rel="stylesheet" type="text/css" href="styles/shadowstyles.css">
 	<link rel="stylesheet" type="text/css" href="styles/magic.css"> 
-	<link rel="stylesheet" type="text/css" href="styles/infobox.css">  
+	<link rel="stylesheet" type="text/css" href="styles/infobox.css"> 
+	
 	<script type="text/javascript" src="scripts/events.js"></script>
 	<script type="text/javascript" src="scripts/eggs.js"></script>
 	<script type="text/javascript">
@@ -17,6 +31,7 @@
 		var shadowImg=new Image();
 		shadowImg.src="images/shadow.png";
 		var redset=true;
+		var redegg=true;
 		var flames_on=true;
 		var red_count=0;
 		var blue_count=0;
@@ -25,6 +40,10 @@
 	</script>
 </head>
 <body>
+	
+	<div id="Loadscreen">
+		<img src=images/star.gif>
+	</div>
 	
 	<div id="info">
 		<div id="heading"></div>
@@ -90,5 +109,6 @@
 		<div id="redaddchoice"></div>
 		<div id="handaddchoice"></div>
 	</div>
+	
 </body>
 </html>

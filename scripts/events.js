@@ -3,6 +3,7 @@ function $(id) {
 }
 
 function main() {
+	$("Loadscreen").parentNode.removeChild($("Loadscreen"));
 	$('sub').addEventListener('click', start_blue, false);
 	$('add').addEventListener('click', launch_red, false);
 	$('dragon_blue').addEventListener('animationend', end_blue, false);
@@ -23,6 +24,7 @@ function start_blue() {
 	$('little_blue').className = 'blue_little';
     $('sub').style.visibility='hidden';
 	if(redset) {
+		redegg=true;
 		if(red_count==0) {
 			var blue_stone=new egg('blue');
     		$('dragon_red').addEventListener('animationiteration', blue_egg_check, false);
@@ -38,6 +40,7 @@ function start_blue() {
 		}
 	}
 	else {
+		redegg=false;
 		if(blue_count==0) {
 			var red_stone=new egg('red');
     		$('dragon_red').addEventListener('animationiteration', red_egg_check, false);
@@ -89,9 +92,11 @@ function end_little_home_blue() {
 function launch_red() {
 	if(redset) {
 		start_red('red');
+		redegg=true;
 	}
 	else {
 		start_red('blue');
+		redegg=false;
 	}
 }
 
@@ -111,7 +116,7 @@ function start_red(col) {
 	
 function end_little_red() {
 	$('dragon_red').className = 'red_dragon';
-	if(redset) {
+	if(redegg) {
 		$('egg_red').className = 'red_egg';
 	}
 	else
@@ -144,7 +149,7 @@ function end_red2() {
 	$('dragon_red2').className = 'end_red_dragon';
 	$('egg_red').className = 'end_red_egg';
 	$('egg_blue').className = 'end_blue_egg';
-	if(redset){									
+	if(redegg){									
     	var egg=findEgg($('scene').firstChild,'r',Math.random()*red_count);
     }
     else {
@@ -211,7 +216,7 @@ function takeOff(egg) {
 			clearTimeout(blue_fetch);
 			egg.shadow.parentNode.removeChild(egg.shadow);
 			egg.parentNode.removeChild(egg);
-			if(redset) {
+			if(redegg) {
 				red_count--;
 			}
 			else {
