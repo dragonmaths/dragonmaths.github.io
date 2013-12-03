@@ -201,7 +201,7 @@ function takeOff(egg) {
 	function blueFetch() {
 		$('dragon_blue').style.left=(parseInt($('dragon_blue').style.left)-15*r)+"px";		
 		if(parseInt($('dragon_blue').style.left)<egg_left) {
-			$('dragon_blue').style.top=(parseInt($('dragon_blue').style.top)-5)+"px";
+			$('dragon_blue').style.top=(parseInt($('dragon_blue').style.top)-5*r)+"px";
 			egg.style.left=(parseInt($('dragon_blue').style.left)+l)+"px";
 			egg.style.top=(parseInt($('dragon_blue').style.top)+t)+"px";
 			egg.shadow.style.top=(parseInt(egg.shadow.style.top)+5)+"px";
