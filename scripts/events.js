@@ -3,6 +3,7 @@ function $(id) {
 }
 
 function main() {
+console.log('main');	
 	$("Loadscreen").parentNode.removeChild($("Loadscreen"));
 	$('sub').addEventListener('click', start_blue, false);
 	$('add').addEventListener('click', launch_red, false);
@@ -13,13 +14,22 @@ function main() {
 	$('little_home_blue').addEventListener('animationend', end_little_home_blue, false);
 	$('little_red').addEventListener('animationend', end_little_red, false);
 	$('little_home_red').addEventListener('animationend', end_little_home_red, false);
+	$('dragon_blue').addEventListener('webkitAnimationEnd', end_blue, false);
+	$('dragon_red').addEventListener('webkitAnimationEnd', end_red, false);
+	$('dragon_red2').addEventListener('webkitAnimationEnd', end_red2, false);
+	$('little_blue').addEventListener('webkitAnimationEnd', end_little_blue, false);
+	$('little_home_blue').addEventListener('webkitAnimationEnd', end_little_home_blue, false);
+	$('little_red').addEventListener('webkitAnimationEnd', end_little_red, false);
+	$('little_home_red').addEventListener('webkitAnimationEnd', end_little_home_red, false);
 	$('redaddchoice').addEventListener('click', setred, false);
 	$('blueaddchoice').addEventListener('click', setblue, false);
 	$('handaddchoice').className='handstart';
 	$('flames').addEventListener('animationend', function() {doDestroy(this.egg)}, false);
+	$('flames').addEventListener('webkitAnimationEnd', function() {doDestroy(this.egg)}, false);
 }
 
 function start_blue() {
+	$('addover').style.visibility='visible';
 	flames_on=false;
 	$('little_blue').className = 'blue_little';
     $('sub').style.visibility='hidden';
@@ -28,8 +38,10 @@ function start_blue() {
 		if(red_count==0) {
 			var blue_stone=new egg('blue');
     		$('dragon_red').addEventListener('animationiteration', blue_egg_check, false);
+    		$('dragon_red').addEventListener('webkitAnimationIteration', blue_egg_check, false);
     		var red_stone=new egg('red');
     		$('dragon_red2').addEventListener('animationiteration', red_egg_check, false);
+    		$('dragon_red2').addEventListener('webkitAnimationIteration', red_egg_check, false);
       		$('dragon_red').className = 'red_dragon';
     		$('egg_blue').className = 'blue_egg';
     		setTimeout(function () {$('dragon_red2').className = 'red_dragon';$('egg_red').className = 'red_egg';},1000);
@@ -44,8 +56,10 @@ function start_blue() {
 		if(blue_count==0) {
 			var red_stone=new egg('red');
     		$('dragon_red').addEventListener('animationiteration', red_egg_check, false);
+    		$('dragon_red').addEventListener('webkitAnimationIteration', red_egg_check, false);
     		var blue_stone=new egg('blue');
     		$('dragon_red2').addEventListener('animationiteration', blue_egg_check, false);
+    		$('dragon_red2').addEventListener('webkitAnimationIteration', blue_egg_check, false);
       		$('dragon_red').className = 'red_dragon';
     		$('egg_red').className = 'red_egg';
     		setTimeout(function () {$('dragon_red2').className = 'red_dragon';$('egg_blue').className = 'blue_egg';},1000);
@@ -87,6 +101,7 @@ function end_little_home_blue() {
 	$('little_home_blue').style.visibility='hidden';
 	$('little_blue').style.visibility='visible';
 	$('sub').style.visibility='visible';
+	$('addover').style.visibility='hidden';
 }
 
 function launch_red() {
@@ -98,14 +113,18 @@ function launch_red() {
 		start_red('blue');
 		redegg=false;
 	}
+	$('subover').style.visibility='visible';
 }
 
-function start_red(col) {
+function start_red(col) {	
 	flames_on=true;
 	var red_stone=new egg(col);
-    $('little_red').className = 'red_little';
+    
     $('add').style.visibility='hidden';
+    $('dragon_red').addEventListener('webkitAnimationIteration', red_egg_check, false);
     $('dragon_red').addEventListener('animationiteration', red_egg_check, false);
+    
+	$('little_red').className = 'red_little';
      
      function red_egg_check() {
 		if((++red_stone.iterations)==7) {
@@ -114,7 +133,7 @@ function start_red(col) {
 	}
 }
 	
-function end_little_red() {
+function end_little_red() {		
 	$('dragon_red').className = 'red_dragon';
 	if(redegg) {
 		$('egg_red').className = 'red_egg';
@@ -141,6 +160,7 @@ function end_little_home_red() {
 	$('little_home_red').style.visibility='hidden';
 	$('little_red').style.visibility='visible';
 	$('add').style.visibility='visible';
+	$('subover').style.visibility='hidden';
 }
 
 function end_red2() {
@@ -161,7 +181,7 @@ function end_red2() {
 function takeOff(egg) {
     var layer=egg.style.zIndex/10;
     $('dragon_blue').className = 'blue_dragon_'+layer;
-    switch (egg.style.zIndex) {
+    switch (egg.style.zIndex+"") {
 		case "0":
 			var t=130;
 			var l=150;

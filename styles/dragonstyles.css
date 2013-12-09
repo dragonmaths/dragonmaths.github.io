@@ -12,7 +12,9 @@ body {
 	width:960px;
 	height:360px;
 	clip: rect(0px,960px,360px,0px);
+	-webkit-transform:scale(0.6);
 	transform:scale(0.6);
+	
 }
 .scene {
 	background:url(../images/back5.jpg);
@@ -35,7 +37,8 @@ body {
 }
 
 .blue_dragon_0 { 
-	transform:scale(1);      
+	transform:scale(1);
+	-webkit-transform:scale(1);      
     animation:
        blue_dragon_fly 0.25s 0s steps(9) alternate 40;
     -webkit-animation:
@@ -43,7 +46,8 @@ body {
 }
 
 .blue_dragon_1 { 
-	transform:scale(1.2);      
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);      
     animation:
        blue_dragon_fly 0.25s 0s steps(9) alternate 35;
     -webkit-animation:
@@ -51,7 +55,8 @@ body {
 }
 
 .blue_dragon_2 { 
-	transform:scale(1.4);      
+	transform:scale(1.4);
+	-webkit-transform:scale(1.4);      
     animation:
        blue_dragon_fly 0.25s 0s steps(9) alternate 30;
     -webkit-animation:
@@ -60,7 +65,8 @@ body {
 
 
 .blue_dragon_3 { 
-	transform:scale(1.6);      
+	transform:scale(1.6);
+	-webkit-transform:scale(1.6);      
     animation:
        blue_dragon_fly 0.25s 0s steps(9) alternate 28;
     -webkit-animation:
@@ -69,7 +75,8 @@ body {
 
 
 .blue_dragon_4 { 
-	transform:scale(1.8);      
+	transform:scale(1.8);
+	-webkit-transform:scale(1.8);      
     animation:
        blue_dragon_fly 0.25s 0s steps(9) alternate 24;
     -webkit-animation:
@@ -78,7 +85,8 @@ body {
 
 
 .blue_dragon_5 { 
-	transform:scale(2);      
+	transform:scale(2); 
+	-webkit-transform:scale(2);     
     animation:
        blue_dragon_fly 0.25s 0s steps(9) alternate 20;
     -webkit-animation:

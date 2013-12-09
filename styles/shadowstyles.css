@@ -2,6 +2,7 @@
 	left:185px;
 	top:285px;
 	transform: scale(1);
+	-webkit-transform: scale(1);
 	animation:
 		shadow_egg_drop0 0.5s;
 	-webkit-animation:
@@ -12,6 +13,7 @@
 	left:180px;
 	top:280px;
 	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
 	animation:
 		shadow_egg_drop1 0.5s;
 	-webkit-animation:
@@ -22,6 +24,7 @@
 	left:180px;
 	top:290px;
 	transform: scale(1.4);
+	-webkit-transform: scale(1.4);
 	animation:
 		shadow_egg_drop2 0.5s;
 	-webkit-animation:
@@ -32,6 +35,7 @@
 	left:180px;
 	top:300px;
 	transform: scale(1.7);
+	-webkit-transform: scale(1.7);
 	animation:
 		shadow_egg_drop3 0.5s;
 	-webkit-animation:
@@ -42,6 +46,7 @@
 	left:180px;
 	top:315px;
 	transform: scale(2.1);
+	-webkit-transform: scale(2.1);
 	animation:
 		shadow_egg_drop4 0.5s;
 	-webkit-animation:
@@ -52,6 +57,7 @@
 	left:180px;
 	top:335px;
 	transform: scale(2.5);
+	-webkit-transform: scale(2.5);
 	animation:
 		shadow_egg_drop5 0.5s;
 	-webkit-animation:
@@ -131,73 +137,73 @@
 }
 
 @-webkit-keyframes shadow_egg_drop0 {
-	from {left: 280px; top: 345px; transform: scale(2) }
-	to {left: 185px; top: 285px; transform: scale(1) }
+	from {left: 280px; top: 345px; -webkit-transform: scale(2) }
+	to {left: 185px; top: 285px; -webkit-transform: scale(1) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop1 {
-	from {left: 288px; top: 365px; transform: scale(2.4) }
-	to {left: 188px; top: 305px; transform: scale(1.2) }
+	from {left: 288px; top: 365px; -webkit-transform: scale(2.4) }
+	to {left: 188px; top: 305px; -webkit-transform: scale(1.2) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop2 {
-	from {left: 289px; top: 365px; transform: scale(2.8) }
-	to {left: 189px; top: 305px; transform: scale(1.4) }
+	from {left: 289px; top: 365px; -webkit-transform: scale(2.8) }
+	to {left: 189px; top: 305px; -webkit-transform: scale(1.4) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop3 {
-	from {left: 291px; top: 395px; transform: scale(3.4) }
-	to {left: 191px; top: 335px; transform: scale(1.7) }
+	from {left: 291px; top: 395px; -webkit-transform: scale(3.4) }
+	to {left: 191px; top: 335px; -webkit-transform: scale(1.7) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop4 {
-	from {left: 293px; top: 475px; transform: scale(4.2) }
-	to {left: 193px; top: 415px; transform: scale(2.1) }
+	from {left: 293px; top: 475px; -webkit-transform: scale(4.2) }
+	to {left: 193px; top: 415px; -webkit-transform: scale(2.1) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop5 {
-	from {left: 295px; top: 575px; transform: scale(5) }
-	to {left: 195px; top: 515px; transform: scale(2.5) }
+	from {left: 295px; top: 575px; -webkit-transform: scale(5) }
+	to {left: 195px; top: 515px; -webkit-transform: scale(2.5) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop0 {
-	from {left: 280px; top: 345px; transform: scale(2) }
-	to {left: 185px; top: 285px; transform: scale(1) }
+	from {left: 280px; top: 345px; -webkit-transform: scale(2) }
+	to {left: 185px; top: 285px; -webkit-transform: scale(1) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop1 {
-	from {left: 288px; top: 365px; transform: scale(2.4) }
-	to {left: 188px; top: 305px; transform: scale(1.2) }
+	from {left: 288px; top: 365px; -webkit-transform: scale(2.4) }
+	to {left: 188px; top: 305px; -webkit-transform: scale(1.2) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop2 {
-	from {left: 289px; top: 365px; transform: scale(2.8) }
-	to {left: 189px; top: 305px; transform: scale(1.4) }
+	from {left: 289px; top: 365px; -webkit-transform: scale(2.8) }
+	to {left: 189px; top: 305px; -webkit-transform: scale(1.4) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop3 {
-	from {left: 291px; top: 395px; transform: scale(3.4) }
-	to {left: 191px; top: 335px; transform: scale(1.7) }
+	from {left: 291px; top: 395px; -webkit-transform: scale(3.4) }
+	to {left: 191px; top: 335px; -webkit-transform: scale(1.7) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop4 {
-	from {left: 293px; top: 475px; transform: scale(4.2) }
-	to {left: 193px; top: 415px; transform: scale(2.1) }
+	from {left: 293px; top: 475px; -webkit-transform: scale(4.2) }
+	to {left: 193px; top: 415px; -webkit-transform: scale(2.1) }
 
 }
 
 @-webkit-keyframes shadow_egg_drop5 {
-	from {left: 295px; top: 575px; transform: scale(5) }
-	to {left: 195px; top: 515px; transform: scale(2.5) }
+	from {left: 295px; top: 575px; -webkit-transform: scale(5) }
+	to {left: 195px; top: 515px; -webkit-transform: scale(2.5) }
 
 }
