@@ -1,6 +1,6 @@
 function egg(col) {
 	this.iterations=0;
-	this.layer=Math.round(Math.random()*5);			
+	this.layer=Math.round(Math.random()*5);						
 	this.col=col;	
 	this.add=add;
 	
@@ -28,13 +28,13 @@ function egg(col) {
 				var shtp=32;
 			break;
 			case "30":
-				var s=Math.random()*780+182;
+				var s=Math.random()*780+198;
 				var r=1.7;
 				var y=300;
 				var shtp=35;
 			break;
 			case "40":
-				var s=Math.random()*780+182;
+				var s=Math.random()*780+198;
 				var r=2.1;
 				var y=315;
 				var shtp=100;
@@ -45,7 +45,7 @@ function egg(col) {
 				var y=335;
 				var shtp=100;
 			break;
-		}			
+		}					
 		if(this.col=='red') {
 			this.egg.style.backgroundImage='url('+redEggImg.src+')';
 			this.egg.id="eggred"+(egg_count++);

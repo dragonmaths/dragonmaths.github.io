@@ -1,0 +1,296 @@
+#blue_back {
+	background: url(../images/blue_frames.png);
+	left:-190px;
+	top:20px;
+	width:252px;
+    height:205px;
+    z-index:3;
+    transform:scale(-0.65,0.65);
+	-webkit-transform:scale(-0.65,0.65);
+}
+
+.blue_dragon_back {      
+    animation:
+       blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+       begg_move 7s linear;
+    -webkit-animation:
+       blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+       begg_move 7s linear;
+}
+
+.end_bb {
+	left:-190px;	
+}
+
+@keyframes begg_fly {
+    from { background-position: 0 0 }
+    to { background-position: -1134px 0 }
+}
+
+@-webkit-keyframes begg_fly {/* Safari and Chrome */
+    from { background-position: 0 0 }
+    to { background-position: -1134px 0 }
+}
+
+@keyframes begg_move {
+	from {left: -190px; }
+	to {left: 1040px;}
+}
+
+@-webkit-keyframes begg_move {
+	from {left: -190px; }
+	to {left: 1040px; }
+}
+
+
+/* blue dragons fly down background no eggs.*/
+
+.bluedown {
+	left:-180px;
+	z-index:2;
+	transform:scale(-0.5,0.5);
+	-webkit-transform:scale(-0.5,0.5);	
+	animation:
+		blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+		bluedown_move 11s linear;
+	-webkit-animation:
+		blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+		bluedown_move 11s linear;
+}
+
+@keyframes bluedown_move {
+	from {left: -180px; top:-70px }
+	to {left: 1040px; top: 10px}
+}
+
+@-webkit-keyframes bluedown_move {
+	from {left: -180px; top: -70px }
+	to {left: 1040px; top: 10px}
+}
+
+/* blue dragons fly up background no eggs.*/
+
+.blueup {
+	left:-180px;
+	z-index:2;
+	transform:scale(-0.5,0.5);
+	-webkit-transform:scale(-0.5,0.5);	
+	animation:
+		blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+		blueup_move 11s linear;
+	-webkit-animation:
+		blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+		blueup_move 11s linear;
+}
+
+@keyframes blueup_move {
+	from {left: -180px; top:5px }
+	to {left: 1040px; top: -60px}
+}
+
+@-webkit-keyframes blueup_move {
+	from {left: -180px; top: 5px }
+	to {left: 1040px; top: -60px}
+}
+
+
+
+/* blue dragons carrying eggs up*/
+.begg {
+	left:1040px;
+	transform:scale(0.8);
+	-webkit-transform:scale(0.8);	
+	animation:
+		begg_fly 0.25s 0s steps(9) alternate 80,
+		beggup_move 15s linear;
+	-webkit-animation:
+		begg_fly 0.25s 0s steps(9) alternate 80,
+		beggup_move 15s linear;
+}
+
+@keyframes beggup_move {
+	from {left: 1040px; top: -8px }
+	to {left: -180px; top -75px}
+}
+
+@-webkit-keyframes beggup_move {
+	from {left: 1040px; top: -8px  }
+	to {left: -180px; top: -75px }
+}
+
+/* blue dragons carrying eggs down*/
+.beggdown {
+	left:1040px;
+	transform:scale(0.8);
+	-webkit-transform:scale(0.8);	
+	animation:
+		begg_fly 0.25s 0s steps(9) alternate 80,
+		beggdown_move 15s linear;
+	-webkit-animation:
+		begg_fly 0.25s 0s steps(9) alternate 80,
+		beggdown_move 15s linear;
+}
+
+
+@keyframes beggdown_move {
+	from {left: 1040px; top: -95px }
+	to {left: -180px; top -22px}
+}
+
+@-webkit-keyframes beggdown_move {
+	from {left: 1040px; top: -95px  }
+	to {left: -180px; top: -22px }
+}
+
+/* red dragons fly across background with eggs.*/
+
+#rregg {
+	background: url(../images/red_red_flow.png);
+	left:1040px;
+	top:50px;
+	z-index:3;
+	width:126px;
+	height:102px;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#rbegg {
+	background: url(../images/red_blue_flow.png);
+	left:1040px;
+	top:50px;
+	z-index:3;
+	width:126px;
+	height:102px;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+
+.end_regg {
+	left:1040px;	
+}
+
+.regg {
+	left:1040px;	
+	animation:
+		regg_fly 0.25s 0s steps(9) alternate 40,
+		regg_move 7s linear;
+	-webkit-animation:
+		regg_fly 0.25s 0s steps(9) alternate 40,
+		regg_move 7s linear;
+}
+
+@keyframes regg_fly {
+    from { background-position: 0 0 }
+    to { background-position: -1134px 0 }
+}
+
+@-webkit-keyframes regg_fly {/* Safari and Chrome */
+    from { background-position: 0 0 }
+    to { background-position: -1134px 0 }
+}
+
+@keyframes regg_move {
+	from {left: 1040px }
+	to {left: -120px}
+}
+
+@-webkit-keyframes regg_move {
+	from {left: 1040px }
+	to {left: -120px}
+}
+
+/* red dragons fly down background with eggs.*/
+
+.reddown {
+	left:1040px;
+	z-index:2;	
+	animation:
+		regg_fly 0.25s 0s steps(9) alternate 50,
+		reddown_move 11s linear;
+	-webkit-animation:
+		regg_fly 0.25s 0s steps(9) alternate 50,
+		reddown_move 11s linear;
+}
+
+@keyframes reddown_move {
+	from {left: 1040px; top:-5px }
+	to {left: -120px; top: 35px}
+}
+
+@-webkit-keyframes reddown_move {
+	from {left: 1040px; top: -5px }
+	to {left: -120px; top: 35px}
+}
+
+/* red dragons fly up background with eggs.*/
+
+.redup {
+	left:1040px;
+	z-index:2;	
+	animation:
+		regg_fly 0.25s 0s steps(9) alternate 50,
+		redup_move 11s linear;
+	-webkit-animation:
+		regg_fly 0.25s 0s steps(9) alternate 50,
+		redup_move 11s linear;
+}
+
+@keyframes redup_move {
+	from {left: 1040px; top:35px }
+	to {left: -120px; top: -5px}
+}
+
+@-webkit-keyframes redup_move {
+	from {left: 1040px; top: 35px }
+	to {left: -120px; top: -5px}
+}
+
+/* red dragons fly down background no eggs.*/
+
+.rednodown {
+	left:-180px;
+	transform:scale(0.4);
+	-webkit-transform:scale(0.4);	
+	animation:
+		red_dragon_fly 0.25s 0s steps(9) alternate 50,
+		rednodown_move 15s linear;
+	-webkit-animation:
+		redno_dragon_fly 0.25s 0s steps(9) alternate 50,
+		rednodown_move 15s linear;
+}
+
+@keyframes rednodown_move {
+	from {left: -180px; top:-90px }
+	to {left: 1040px; top: -10px}
+}
+
+@-webkit-keyframes rednodown_move {
+	from {left: -180px; top: -90px }
+	to {left: 1040px; top: -10px}
+}
+
+/* red dragons fly up background no eggs.*/
+
+.rednoup {
+	left:-180px;
+	transform:scale(0.4);
+	-webkit-transform:scale(0.4);	
+	animation:
+		red_dragon_fly 0.25s 0s steps(9) alternate 50,
+		rednoup_move 15s linear;
+	-webkit-animation:
+		redno_dragon_fly 0.25s 0s steps(9) alternate 50,
+		rednoup_move 15s linear;
+}
+
+@keyframes rednoup_move {
+	from {left: -180px; top:-15px }
+	to {left: 1040px; top: -80px}
+}
+
+@-webkit-keyframes rednoup_move {
+	from {left: -180px; top: -15px }
+	to {left: 1040px; top: -80px}
+}

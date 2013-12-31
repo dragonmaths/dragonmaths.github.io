@@ -2,14 +2,18 @@ function $(id) {
 	return document.getElementById(id);
 }
 
-function main() {
-console.log('main');	
+function main() {	
 	$("Loadscreen").parentNode.removeChild($("Loadscreen"));
 	$('sub').addEventListener('click', start_blue, false);
 	$('add').addEventListener('click', launch_red, false);
 	$('dragon_blue').addEventListener('animationend', end_blue, false);
 	$('dragon_red').addEventListener('animationend', end_red, false);
 	$('dragon_red2').addEventListener('animationend', end_red2, false);
+	$('blue_back').addEventListener('animationend',end_blue_back, false);
+	$('rregg').addEventListener('animationend',end_rregg, false);
+	$('rbegg').addEventListener('animationend',end_rbegg, false);
+	$('bregg').addEventListener('animationend',end_bregg, false);
+	$('bbegg').addEventListener('animationend',end_bbegg, false);
 	$('little_blue').addEventListener('animationend', end_little_blue, false);
 	$('little_home_blue').addEventListener('animationend', end_little_home_blue, false);
 	$('little_red').addEventListener('animationend', end_little_red, false);
@@ -17,6 +21,10 @@ console.log('main');
 	$('dragon_blue').addEventListener('webkitAnimationEnd', end_blue, false);
 	$('dragon_red').addEventListener('webkitAnimationEnd', end_red, false);
 	$('dragon_red2').addEventListener('webkitAnimationEnd', end_red2, false);
+	$('rregg').addEventListener('webkitAnimationEnd',end_rregg, false);
+	$('rbegg').addEventListener('webkitAnimationEnd',end_rbegg, false);
+	$('bregg').addEventListener('webkitAnimationEnd',end_bregg, false);
+	$('bbegg').addEventListener('webkitAnimationEnd',end_bbegg, false);
 	$('little_blue').addEventListener('webkitAnimationEnd', end_little_blue, false);
 	$('little_home_blue').addEventListener('webkitAnimationEnd', end_little_home_blue, false);
 	$('little_red').addEventListener('webkitAnimationEnd', end_little_red, false);
@@ -26,6 +34,14 @@ console.log('main');
 	$('handaddchoice').className='handstart';
 	$('flames').addEventListener('animationend', function() {doDestroy(this.egg)}, false);
 	$('flames').addEventListener('webkitAnimationEnd', function() {doDestroy(this.egg)}, false);
+	randredflights();
+	randblueflights();
+	randredwithoutflights();
+	randbluewithflights();
+	redwithegg();
+	redwithoutegg();
+	bluewithegg();
+	bluenoegg(); 
 }
 
 function start_blue() {
@@ -46,10 +62,6 @@ function start_blue() {
     		$('egg_blue').className = 'blue_egg';
     		setTimeout(function () {$('dragon_red2').className = 'red_dragon';$('egg_red').className = 'red_egg';},1000);
 		}
-		else {
-     		var egg_found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
-			takeOff(egg_found);
-		}
 	}
 	else {
 		redegg=false;
@@ -63,10 +75,6 @@ function start_blue() {
       		$('dragon_red').className = 'red_dragon';
     		$('egg_red').className = 'red_egg';
     		setTimeout(function () {$('dragon_red2').className = 'red_dragon';$('egg_blue').className = 'blue_egg';},1000);
-		}
-		else {
-			var egg_found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
-			takeOff(egg_found);
 		}
 	}
      
@@ -84,9 +92,34 @@ function start_blue() {
 	}	
 }
 
+function end_blue_back() {
+	$("blue_back").className="end_bb";
+	if(redegg){									
+    	var egg=findEgg($('scene').firstChild,'r',Math.random()*red_count);
+    }
+    else {
+    	var egg=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
+    }
+    takeOff(egg);
+}
+
+function end_bregg() {
+	$('bregg').className='end_begg';
+	var egg_found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
+	takeOff(egg_found);
+}
+
+function end_bbegg() {
+	$('bbegg').className='end_begg';
+	var egg_found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
+	takeOff(egg_found);
+}
+
+
 function end_little_blue() {
 	$('little_blue').className = 'end_blue_little';
 	$('little_blue').style.visibility='hidden';
+	$('blue_back').className='blue_dragon_back';
 }
 
 function end_blue() {
@@ -94,6 +127,7 @@ function end_blue() {
 	$('little_home_blue').style.visibility='visible';
 	$('little_home_blue').className = 'blue_little_home';
 	$('little_blue').className = 'end_blue_little';
+	
 }
 
 function end_little_home_blue() {
@@ -106,25 +140,40 @@ function end_little_home_blue() {
 
 function launch_red() {
 	if(redset) {
-		start_red('red');
+		$('rregg').className='regg';
 		redegg=true;
 	}
 	else {
-		start_red('blue');
+		$('rbegg').className='regg';
 		redegg=false;
 	}
+	$('little_red').className = 'red_little';
 	$('subover').style.visibility='visible';
+	$('add').style.visibility='hidden';
+}
+
+function end_rregg() {
+	$('rregg').className='end_regg';
+	start_red('red');
+	$('dragon_red').className = 'red_dragon';
+	$('egg_red').className = 'red_egg';
+}
+
+function end_rbegg() {
+	$('rbegg').className='end_regg';
+	start_red('blue');
+	$('dragon_red').className = 'red_dragon';
+	$('egg_blue').className = 'blue_egg';
 }
 
 function start_red(col) {	
 	flames_on=true;
 	var red_stone=new egg(col);
-    
-    $('add').style.visibility='hidden';
+
     $('dragon_red').addEventListener('webkitAnimationIteration', red_egg_check, false);
     $('dragon_red').addEventListener('animationiteration', red_egg_check, false);
     
-	$('little_red').className = 'red_little';
+	
      
      function red_egg_check() {
 		if((++red_stone.iterations)==7) {
@@ -134,14 +183,6 @@ function start_red(col) {
 }
 	
 function end_little_red() {		
-	$('dragon_red').className = 'red_dragon';
-	if(redegg) {
-		$('egg_red').className = 'red_egg';
-	}
-	else
-	{
-		$('egg_blue').className = 'blue_egg';
-	}
 	$('little_red').className = 'end_red_little';
 	$('little_red').style.visibility='hidden';
 }
@@ -169,13 +210,6 @@ function end_red2() {
 	$('dragon_red2').className = 'end_red_dragon';
 	$('egg_red').className = 'end_red_egg';
 	$('egg_blue').className = 'end_blue_egg';
-	if(redegg){									
-    	var egg=findEgg($('scene').firstChild,'r',Math.random()*red_count);
-    }
-    else {
-    	var egg=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
-    }
-    takeOff(egg);
 }
 
 function takeOff(egg) {
@@ -215,10 +249,10 @@ function takeOff(egg) {
 	}
 	$('dragon_blue').style.left=(960+100*r)+"px";
     $('dragon_blue').style.top=(parseInt(egg.style.top)-t)+"px";
-	var egg_left=parseInt(egg.style.left)-l;    
+	var egg_left=parseInt(egg.style.left)-l;	    
 	blueFetch();
 		
-	function blueFetch() {
+	function blueFetch() {	
 		$('dragon_blue').style.left=(parseInt($('dragon_blue').style.left)-15*r)+"px";		
 		if(parseInt($('dragon_blue').style.left)<egg_left) {
 			$('dragon_blue').style.top=(parseInt($('dragon_blue').style.top)-5*r)+"px";

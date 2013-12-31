@@ -109,6 +109,7 @@ body {
 	width:252px;
 	height:205px;
 	background:url(../images/red_frames.png);
+	z-index:80;
 }
 
 #dragon_red2 {
@@ -117,6 +118,7 @@ body {
 	width:252px;
 	height:205px;
 	background:url(../images/red_frames.png);
+	z-index:80;
 }
 
 .end_red_dragon {
