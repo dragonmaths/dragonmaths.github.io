@@ -102,6 +102,15 @@
 	background-size:contain;
 }
 
+#egg_red2 {
+	left:1070px;
+	top: 100px;	
+	width:23px;
+	height:29px;
+	background:url("../images/redEgg.png");
+	background-size:contain;
+}
+
 .end_red_egg {
 	left:-460px;
 	top:100px;	
@@ -554,6 +563,15 @@
 }
 
 #egg_blue {
+	left:1070px;
+	top: 100px;	
+	width:23px;
+	height:29px;
+	background:url("../images/blueEgg.png");
+	background-size:contain;
+}
+
+#egg_blue2 {
 	left:1070px;
 	top: 100px;	
 	width:23px;

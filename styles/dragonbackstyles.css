@@ -109,13 +109,13 @@
 }
 
 @keyframes beggup_move {
-	from {left: 1040px; top: -8px }
-	to {left: -180px; top -75px}
+	from {left: 1040px; top: 2px }
+	to {left: -180px; top: -52px}
 }
 
 @-webkit-keyframes beggup_move {
-	from {left: 1040px; top: -8px  }
-	to {left: -180px; top: -75px }
+	from {left: 1040px; top: 2px  }
+	to {left: -180px; top: -52px }
 }
 
 /* blue dragons carrying eggs down*/
@@ -133,13 +133,13 @@
 
 
 @keyframes beggdown_move {
-	from {left: 1040px; top: -95px }
-	to {left: -180px; top -22px}
+	from {left: 1040px; top: -15px }
+	to {left: -180px; top: 28px}
 }
 
 @-webkit-keyframes beggdown_move {
-	from {left: 1040px; top: -95px  }
-	to {left: -180px; top: -22px }
+	from {left: 1040px; top: -15px  }
+	to {left: -180px; top: 28px }
 }
 
 /* red dragons fly across background with eggs.*/
