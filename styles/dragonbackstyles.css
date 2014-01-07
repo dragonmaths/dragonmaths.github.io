@@ -11,10 +11,10 @@
 
 .blue_dragon_back {      
     animation:
-       blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+       blue_dragon_fly 0.25s 0s steps(9) alternate 25,
        begg_move 7s linear;
     -webkit-animation:
-       blue_dragon_fly 0.25s 0s steps(9) alternate 40,
+       blue_dragon_fly 0.25s 0s steps(9) alternate 25,
        begg_move 7s linear;
 }
 
@@ -109,13 +109,13 @@
 }
 
 @keyframes beggup_move {
-	from {left: 1040px; top: 2px }
-	to {left: -180px; top: -52px}
+	from {left: 1040px; top: 72px }
+	to {left: -180px; top: 22px}
 }
 
 @-webkit-keyframes beggup_move {
-	from {left: 1040px; top: 2px  }
-	to {left: -180px; top: -52px }
+	from {left: 1040px; top: 72px  }
+	to {left: -180px; top: 22px }
 }
 
 /* blue dragons carrying eggs down*/
@@ -133,13 +133,13 @@
 
 
 @keyframes beggdown_move {
-	from {left: 1040px; top: -15px }
-	to {left: -180px; top: 28px}
+	from {left: 1040px; top: -20px }
+	to {left: -180px; top: 23px}
 }
 
 @-webkit-keyframes beggdown_move {
-	from {left: 1040px; top: -15px  }
-	to {left: -180px; top: 28px }
+	from {left: 1040px; top: -20px  }
+	to {left: -180px; top: 23px }
 }
 
 /* red dragons fly across background with eggs.*/

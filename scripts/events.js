@@ -9,8 +9,8 @@ function main() {
 	$('dragon_blue').addEventListener('animationend', end_blue, false);
 	$('dragon_red').addEventListener('animationend', end_red, false);
 	$('dragon_red2').addEventListener('animationend', end_red2, false);
-	$('dragon_red').addEventListener('animationend', end_red3, false);
-	$('dragon_red2').addEventListener('animationend', end_red4, false);
+	$('dragon_red3').addEventListener('animationend', end_red3, false);
+	$('dragon_red4').addEventListener('animationend', end_red4, false);
 	$('blue_back').addEventListener('animationend',end_blue_back, false);
 	$('rregg').addEventListener('animationend',end_rregg, false);
 	$('rbegg').addEventListener('animationend',end_rbegg, false);
@@ -46,7 +46,7 @@ function main() {
 	redwithoutegg();
 	bluewithegg();
 	bluenoegg(); 
-	//randzeroflights();
+	randzeroflights();
 	zeroFlights();
 }
 
@@ -54,15 +54,17 @@ function start_blue() {
 	$('addover').style.visibility='visible';
 	flames_on=false;
 	$('little_blue').className = 'blue_little';
-    $('sub').style.visibility='hidden';
+    $('sub').style.visibility='hidden';    
 	if(redset) {
 		redegg=true;
 		if(red_count==0) {
 			var blue_stone=new egg('blue');
+			blue_count++;
 			blue_stone.set();
     		$('dragon_red').addEventListener('animationiteration', blue_egg_check, false);
     		$('dragon_red').addEventListener('webkitAnimationIteration', blue_egg_check, false);
     		var red_stone=new egg('red');
+    		red_count++;
     		red_stone.set();   		
     		blue_stone.egg.found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
     		red_stone.match(blue_stone.egg.found);    		
@@ -77,11 +79,13 @@ function start_blue() {
 		redegg=false;
 		if(blue_count==0) {
 			var red_stone=new egg('red');
+			red_count++;
 			red_stone.set();
     		$('dragon_red').addEventListener('animationiteration', red_egg_check, false);
     		$('dragon_red').addEventListener('webkitAnimationIteration', red_egg_check, false);
     		var blue_stone=new egg('blue');
     		blue_stone.set();
+    		blue_count++;
     		red_stone.egg.found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
     		blue_stone.match(red_stone.egg.found);
     		$('dragon_red2').addEventListener('animationiteration', blue_egg_check, false);
@@ -106,7 +110,7 @@ function start_blue() {
 	}	
 }
 
-function end_blue_back() {
+function end_blue_back() {	
 	$("blue_back").className="end_bb";	
 	if(redegg){									
     	var egg=findEgg($('scene').firstChild,'r',Math.random()*red_count);
@@ -114,19 +118,20 @@ function end_blue_back() {
     else {
     	var egg=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
     }
+   
     takeOff(egg);
 }
 
 function end_bregg() {
 	$('bregg').className='end_begg';
-	var egg_found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
-	takeOff(egg_found);
+//	var egg_found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
+//	takeOff(egg_found);
 }
 
 function end_bbegg() {
 	$('bbegg').className='end_begg';
-	var egg_found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
-	takeOff(egg_found);
+//	var egg_found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
+//	takeOff(egg_found);
 }
 
 
@@ -185,6 +190,7 @@ function start_red(col) {
 	var stone=new egg(col);
 	stone.set();
 	if(col=='red') {
+		red_count++;
 		if(blue_count>0) {
 			var oldegg=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
 			stone.match(oldegg);
@@ -192,6 +198,7 @@ function start_red(col) {
 		}
 	}
 	else {
+		blue_count++;
 		if(red_count>0) {
 			var oldegg=findEgg($('scene').firstChild,'r',Math.random()*red_count);
 			stone.match(oldegg);
@@ -204,7 +211,7 @@ function start_red(col) {
     $('dragon_red').addEventListener('animationiteration', red_egg_check, false);
      
      function red_egg_check() {
-		if((++stone.iterations)==7) {
+		if((++stone.iterations)==7) {			
 			stone.add();
 		}
 	}
@@ -246,16 +253,25 @@ function end_red3() {
 	$('egg_blue2').className = 'end_blue_egg';
 }
 
-function end_red4() {
+function end_red4() {	
 	$('dragon_red4').className = 'end_red_dragon';
 	$('egg_red2').className = 'end_red_egg';
 	$('egg_blue2').className = 'end_blue_egg';
+	var egg=red_stone_temp.egg;
+	$('flames').egg=egg;
+	egg.found=blue_stone_temp.egg;
+	red_stone_temp.flame_burn();
+	blue_stone_temp.steam_on();
+	egg.shadow.className='shadow_go';
+	egg.found.shadow.className='shadow_go';
+	egg.found.className='egg_go';
+	egg.className='egg_go';
 }
 
 
-function takeOff(egg) {
+function takeOff(egg) {	
     var layer=egg.style.zIndex/10;
-    $('dragon_blue').className = 'blue_dragon_'+layer;
+    $('dragon_blue').className = 'blue_dragon_'+layer;  
     switch (egg.style.zIndex+"") {
 		case "0":
 			var t=130;
@@ -293,8 +309,8 @@ function takeOff(egg) {
 	var egg_left=parseInt(egg.style.left)-l;	    
 	blueFetch();
 		
-	function blueFetch() {	
-		$('dragon_blue').style.left=(parseInt($('dragon_blue').style.left)-15*r)+"px";		
+	function blueFetch() {			
+		$('dragon_blue').style.left=(parseInt($('dragon_blue').style.left)-15*r)+"px";			
 		if(parseInt($('dragon_blue').style.left)<egg_left) {
 			$('dragon_blue').style.top=(parseInt($('dragon_blue').style.top)-5*r)+"px";
 			egg.style.left=(parseInt($('dragon_blue').style.left)+l)+"px";
@@ -307,7 +323,7 @@ function takeOff(egg) {
 		if(parseInt($('dragon_blue').style.left)>-443) {
 			var blue_fetch=setTimeout(blueFetch,100);
 		}
-		else {
+		else {			
 			clearTimeout(blue_fetch);
 			egg.shadow.parentNode.removeChild(egg.shadow);
 			egg.parentNode.removeChild(egg);

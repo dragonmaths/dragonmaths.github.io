@@ -154,7 +154,7 @@
 	95% {opacity: 0.1}
 	100% {opacity: 0}
 }
-
+/*
 #rbeggs {
 	left:400px;
 	top:335px;
@@ -176,7 +176,7 @@
 	transform: scale(2.5);
 	-webkit-transform: scale(2.5);
 }
-
+*/
 .egg_go {
 	opacity:0;
 	animation:

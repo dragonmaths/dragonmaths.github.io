@@ -1,6 +1,6 @@
-function egg(col) {
+function egg(col,dummy) {
 	this.iterations=0;
-	this.layer=Math.round(Math.random()*5);						
+	this.layer=Math.round(Math.random()*5);							
 	this.col=col;
 	this.egg=document.createElement('div');
 	this.egg.stone=this;
@@ -9,18 +9,22 @@ function egg(col) {
 	if(this.col=='red') {
 		this.egg.style.backgroundImage='url('+redEggImg.src+')';
 		this.egg.id="eggred"+(egg_count++);
-		red_count++;
 	}
 	else {
 		this.egg.style.backgroundImage='url('+blueEggImg.src+')';
 		this.egg.id="eggblue"+(egg_count++);
-		blue_count++;
 	}
+	if(dummy) {
+		this.egg.id +="dummy";
+	}	
 	$('scene').appendChild(this.egg);
 	//methods
 	this.set=set;
 	this.match=match;	
 	this.add=add;
+	this.flame_burn=flame_burn;
+	this.steam_on=steam_on;
+	this.displace=displace;
 	this.place_egg=place_egg;
 	
 	function set() {	
@@ -38,25 +42,25 @@ function egg(col) {
 				this.shtp=25;
 			break;
 			case "20":
-				this.s=Math.random()*720+320;
+				this.s=Math.random()*582+320;
 				this.r=1.4;
 				this.y=290;
 				this.shtp=32;
 			break;
 			case "30":
-				this.s=Math.random()*780+320;
+				this.s=Math.random()*582+320;
 				this.r=1.7;
 				this.y=300;
 				this.shtp=35;
 			break;
 			case "40":
-				this.s=Math.random()*780+320;
+				this.s=Math.random()*582+320;
 				this.r=2.1;
 				this.y=315;
 				this.shtp=100;
 			break;
 			case "50":
-				this.s=Math.random()*720+320;
+				this.s=Math.random()*620+320;
 				this.r=2.5;
 				this.y=335;
 				this.shtp=100;
@@ -83,6 +87,65 @@ function egg(col) {
 		this.egg.style.zIndex=this.layer*10;
 	}
 	
+	function flame_burn() {
+		var d=this.displace();
+		$('flames').egg=this.egg;
+		$('flames').style.left=parseInt(this.egg.style.left)+d.dl+"px";
+		$('flames').style.top=parseInt(this.egg.style.top)+d.dt+"px";
+		$('flames').style.opacity=0;
+		$('flames').style.transform= 'scale('+d.scl+')';
+		$('flames').style.webkitTransform= 'scale('+d.scl+')';
+		$('flames').style.zIndex=parseInt(this.egg.style.zIndex)+5;
+		$('flames').className='flames_on';
+	}
+	
+	function steam_on() {
+		var d=this.displace();
+		$('steam').style.left=20*d.scl+parseInt(this.egg.style.left)+d.dl+"px";
+		$('steam').style.top=parseInt(this.egg.style.top)+d.dt+"px";
+		$('steam').style.opacity=0;
+		$('steam').style.transform= 'scale('+d.scl+')';
+		$('steam').style.webkitTransform= 'scale('+d.scl+')';
+		$('steam').style.zIndex=parseInt(this.egg.style.zIndex)+5;
+		$('steam').className='steam_on';
+	}
+	
+	function displace() {
+		switch (this.egg.style.zIndex+"") {
+			case "0":
+				var scl=0.45;
+				var dl=-37;
+				var dt=-60;
+			break
+			case "10":
+				var scl=0.54;
+				var dl=-38;
+				var dt=-60;
+			break
+			case "20":
+				var scl=0.63;
+				var dl=-38;
+				var dt=-60;
+			break
+			case "30":
+				var scl=0.765;
+				var dl=-36;
+				var dt=-55;
+			break
+			case "40":
+				var scl=0.945;
+				var dl=-35;
+				var dt=-55;
+			break
+			case "50":
+				var scl=1.125;
+				var dl=-25;
+				var dt=-50;
+			break
+		}
+		return {scl:scl,dl:dl,dt:dt};
+	}
+	
 	function add() {						
 		this.egg.style.backgroundSize='contain';
 		this.egg.style.width=(23*this.r)+"px";
@@ -100,7 +163,7 @@ function egg(col) {
 		this.egg.shadow.style.zIndex=this.layer*10-1;
 		$('scene').appendChild(this.egg.shadow);
 				
-		if(this.col=='red') {
+		if(this.col=='red') {			
 			this.egg.className='red_drop'+this.layer;
 		}
 		else {
@@ -149,13 +212,13 @@ function place_egg() {
 			var wsize=2*Math.abs(w);
 			var ddw=-w/Math.abs(w);
 			ddw*=wsize/10;
-			var dw=0;
-			wobbleEgg();
+			var dw=0;			
+			wobbleEgg(stone);
 		}
 		
 	}
 	
-	function wobbleEgg() {
+	function wobbleEgg(stone) {
 		if(dw+Math.abs(ddw)<wsize){
 			egg.style.transform='rotate('+w+'deg)';
 			egg.shadow.style.transform='rotate('+(w/5)+'deg)';
@@ -163,130 +226,32 @@ function place_egg() {
 			egg.shadow.style.webkitTransform='rotate('+(w/5)+'deg)';
 			dw+=Math.abs(ddw);
 			w+=ddw;
-			var egg_wobble=setTimeout(function() {wobbleEgg();},50);
+			var egg_wobble=setTimeout(function() {wobbleEgg(stone);},50);
 		}
 		else {
-			clearTimeout(egg_wobble);
+			clearTimeout(egg_wobble);			
 			if(Math.abs(w)<5) {
 				egg.style.transform='rotate(0deg)';
 				egg.shadow.style.transform='rotate(0deg)';
 				egg.style.webkitTransform='rotate(0deg)';
-				egg.shadow.style.webkitTransform='rotate(0deg)';
-				if(red_count>0 && blue_count>0) {							
-					if(egg.col=='red') {
-						switch (egg.style.zIndex+"") {
-							case "0":
-								var scl=0.45;
-								var fdl=-37;
-								var fdt=-60;
-								var sdl=-9;
-								var sdt=-60
-							break;
-							case "10":
-								var scl=0.54;
-								var fdl=-38;
-								var fdt=-60;
-								var sdl=-5;
-								var sdt=-60
-							break;
-							case "20":
-								var scl=0.63;
-								var fdl=-38;
-								var fdt=-60;
-								var sdl=0;
-								var sdt=-60
-							break;
-							case "30":
-								var scl=0.765;
-								var fdl=-36;
-								var fdt=-55;
-								var sdl=9;
-								var sdt=-55
-							break;
-							case "40":
-								var scl=0.945;
-								var fdl=-35;
-								var fdt=-52;
-								var sdl=15;
-								var sdt=-55
-							break;
-							case "50":
-								var scl=1.125;
-								var fdl=-25;
-								var fdt=-50;
-								var sdl=20;
-								var sdt=-50
-							break;
+				egg.shadow.style.webkitTransform='rotate(0deg)';			
+				if(red_count>0 && blue_count>0) {											
+					if(flames_on) {					
+						if(egg.col=='red') {
+							egg.stone.flame_burn();
+							egg.found.stone.steam_on()
 						}
-					}
-					else {
-						switch (egg.style.zIndex+"") {
-							case "0":
-								var scl=0.45;
-								var fdl=-15;
-								var fdt=-60;
-								var sdl=-30;
-								var sdt=-60;
-							break;
-							case "10":
-								var scl=0.54;
-								var fdl=-12;
-								var fdt=-60;
-								var sdl=-28;
-								var sdt=-60;
-							break;
-							case "20":
-								var scl=0.63;
-								var fdl=-9;
-								var fdt=-58;
-								var sdl=-26;
-								var sdt=-58;
-							break;
-							case "30":									
-								var scl=0.765;
-								var fdl=-4;
-								var fdt=-55;
-								var sdl=-23;
-								var sdt=-52;
-							break;
-							case "40":									
-								var scl=0.945;
-								var fdl=7;
-								var fdt=-55;
-								var sdl=-18;
-								var sdt=-52;
-							break;
-							case "50":									
-								var scl=1.125;
-								var fdl=10;
-								var fdt=-50;
-								var sdl=-10;
-								var sdt=-50
-							break;
+						else {
+							egg.found.stone.flame_burn();
+							egg.stone.steam_on();
 						}
-					}
-					if(flames_on) {
 						red_count--;
 						blue_count--;
 						$('flames').egg=egg;
-						$('flames').style.left=parseInt(egg.style.left)+fdl+"px";
-						$('flames').style.top=parseInt(egg.style.top)+fdt+"px";
-						$('flames').style.opacity=0;
-						$('flames').style.transform= 'scale('+scl+')';
-						$('flames').style.webkitTransform= 'scale('+scl+')';
-						$('flames').style.zIndex=parseInt(egg.style.zIndex)+5;
-						$('steam').style.left=parseInt(egg.style.left)+sdl+"px";
-						$('steam').style.top=parseInt(egg.style.top)+sdt+"px";
-						$('steam').style.opacity=0;
-						$('steam').style.transform= 'scale('+scl+')';
-						$('steam').style.webkitTransform= 'scale('+scl+')';
-						$('steam').style.zIndex=parseInt(egg.style.zIndex)+5;
-						$('flames').className='flames_on';
-						$('steam').className='steam_on';
-						egg.className='egg_go';
-						egg.found.className='egg_go';
 						egg.shadow.className='shadow_go';
 						egg.found.shadow.className='shadow_go';
+						egg.found.className='egg_go';
+						egg.className='egg_go';
 					}
 				}		
 			}
@@ -296,7 +261,7 @@ function place_egg() {
 				ddw*=wsize/10;
 				w-=ddw;
 				dw=0;
-				wobbleEgg();
+				wobbleEgg(stone);
 			}
 		}				
 	}
@@ -317,7 +282,7 @@ function place_egg() {
 			ddw=-w/Math.abs(w);
 			ddw*=wsize/10;
 			dw=0;
-			wobbleEgg(w);
+			wobbleEgg(stone);
 		}
 	}
 }
