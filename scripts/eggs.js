@@ -1,4 +1,5 @@
 function egg(col,dummy) {
+	this.flid="";
 	this.iterations=0;
 	this.layer=Math.round(Math.random()*5);							
 	this.col=col;
@@ -15,7 +16,9 @@ function egg(col,dummy) {
 		this.egg.id="eggblue"+(egg_count++);
 	}
 	if(dummy) {
-		this.egg.id +="dummy";
+		this.egg.id ="dummy"+this.egg.id;
+		this.flid="2";
+		
 	}	
 	$('scene').appendChild(this.egg);
 	//methods
@@ -89,25 +92,25 @@ function egg(col,dummy) {
 	
 	function flame_burn() {
 		var d=this.displace();
-		$('flames').egg=this.egg;
-		$('flames').style.left=parseInt(this.egg.style.left)+d.dl+"px";
-		$('flames').style.top=parseInt(this.egg.style.top)+d.dt+"px";
-		$('flames').style.opacity=0;
-		$('flames').style.transform= 'scale('+d.scl+')';
-		$('flames').style.webkitTransform= 'scale('+d.scl+')';
-		$('flames').style.zIndex=parseInt(this.egg.style.zIndex)+5;
-		$('flames').className='flames_on';
+		$('flames'+this.flid).egg=this.egg;
+		$('flames'+this.flid).style.left=parseInt(this.egg.style.left)+d.dl+"px";
+		$('flames'+this.flid).style.top=parseInt(this.egg.style.top)+d.dt+"px";
+		$('flames'+this.flid).style.opacity=0;
+		$('flames'+this.flid).style.transform= 'scale('+d.scl+')';
+		$('flames'+this.flid).style.webkitTransform= 'scale('+d.scl+')';
+		$('flames'+this.flid).style.zIndex=parseInt(this.egg.style.zIndex)+5;
+		$('flames'+this.flid).className='flames_on';
 	}
 	
 	function steam_on() {
 		var d=this.displace();
-		$('steam').style.left=20*d.scl+parseInt(this.egg.style.left)+d.dl+"px";
-		$('steam').style.top=parseInt(this.egg.style.top)+d.dt+"px";
-		$('steam').style.opacity=0;
-		$('steam').style.transform= 'scale('+d.scl+')';
-		$('steam').style.webkitTransform= 'scale('+d.scl+')';
-		$('steam').style.zIndex=parseInt(this.egg.style.zIndex)+5;
-		$('steam').className='steam_on';
+		$('steam'+this.flid).style.left=20*d.scl+parseInt(this.egg.style.left)+d.dl+"px";
+		$('steam'+this.flid).style.top=parseInt(this.egg.style.top)+d.dt+"px";
+		$('steam'+this.flid).style.opacity=0;
+		$('steam'+this.flid).style.transform= 'scale('+d.scl+')';
+		$('steam'+this.flid).style.webkitTransform= 'scale('+d.scl+')';
+		$('steam'+this.flid).style.zIndex=parseInt(this.egg.style.zIndex)+5;
+		$('steam'+this.flid).className='steam_on';
 	}
 	
 	function displace() {
@@ -247,7 +250,7 @@ function place_egg() {
 						}
 						red_count--;
 						blue_count--;
-						$('flames').egg=egg;
+						$('flames'+stone.flid).egg=egg;
 						egg.shadow.className='shadow_go';
 						egg.found.shadow.className='shadow_go';
 						egg.found.className='egg_go';

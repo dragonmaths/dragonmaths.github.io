@@ -38,6 +38,8 @@ function main() {
 	$('handaddchoice').className='handstart';
 	$('flames').addEventListener('animationend', function() {doDestroy(this.egg)}, false);
 	$('flames').addEventListener('webkitAnimationEnd', function() {doDestroy(this.egg)}, false);
+	$('flames2').addEventListener('animationend', function() {doDestroy(this.egg)}, false);
+	$('flames2').addEventListener('webkitAnimationEnd', function() {doDestroy(this.egg)}, false);
 	randredflights();
 	randblueflights();
 	randredwithoutflights();
@@ -124,14 +126,10 @@ function end_blue_back() {
 
 function end_bregg() {
 	$('bregg').className='end_begg';
-//	var egg_found=findEgg($('scene').firstChild,'r',Math.random()*red_count);
-//	takeOff(egg_found);
 }
 
 function end_bbegg() {
 	$('bbegg').className='end_begg';
-//	var egg_found=findEgg($('scene').firstChild,'b',Math.random()*blue_count);
-//	takeOff(egg_found);
 }
 
 
@@ -258,7 +256,7 @@ function end_red4() {
 	$('egg_red2').className = 'end_red_egg';
 	$('egg_blue2').className = 'end_blue_egg';
 	var egg=red_stone_temp.egg;
-	$('flames').egg=egg;
+	$('flames2').egg=egg;
 	egg.found=blue_stone_temp.egg;
 	red_stone_temp.flame_burn();
 	blue_stone_temp.steam_on();
@@ -350,8 +348,8 @@ function setblue() {
 }
 
 function doDestroy(egg) {
-	$('flames').className='flames_off';
-	$('steam').className='steam_off';
+	$('flames'+egg.stone.flid).className='flames_off';
+	$('steam'+egg.stone.flid).className='steam_off';
 	egg.shadow.parentNode.removeChild(egg.shadow);
 	egg.found.shadow.parentNode.removeChild(egg.found.shadow);
 	egg.found.parentNode.removeChild(egg.found);
