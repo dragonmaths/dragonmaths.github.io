@@ -103,34 +103,7 @@ body {
     to { background-position: -2268px 0 }
 }
  
-#dragon_red {
-	left:-443px;
-	top:-178px;
-	width:252px;
-	height:205px;
-	background:url(../images/red_frames.png);
-	z-index:80;
-}
-
-#dragon_red2 {
-	left:-443px;
-	top:-178px;
-	width:252px;
-	height:205px;
-	background:url(../images/red_frames.png);
-	z-index:80;
-}
-
-#dragon_red3 {
-	left:-443px;
-	top:-178px;
-	width:252px;
-	height:205px;
-	background:url(../images/red_frames.png);
-	z-index:80;
-}
-
-#dragon_red4 {
+#dragon_red, #dragon_red2, #dragon_red3, #dragon_red4 {
 	left:-443px;
 	top:-178px;
 	width:252px;

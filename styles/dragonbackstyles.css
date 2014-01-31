@@ -48,6 +48,7 @@
 .bluedown {
 	left:-180px;
 	z-index:2;
+	opacity:0.8;
 	transform:scale(-0.5,0.5);
 	-webkit-transform:scale(-0.5,0.5);	
 	animation:
@@ -73,6 +74,7 @@
 .blueup {
 	left:-180px;
 	z-index:2;
+	opacity:0.8;
 	transform:scale(-0.5,0.5);
 	-webkit-transform:scale(-0.5,0.5);	
 	animation:
@@ -98,6 +100,7 @@
 /* blue dragons carrying eggs up*/
 .begg {
 	left:1040px;
+	opacity:0.6;
 	transform:scale(0.8);
 	-webkit-transform:scale(0.8);	
 	animation:
@@ -121,6 +124,7 @@
 /* blue dragons carrying eggs down*/
 .beggdown {
 	left:1040px;
+	opacity:0.6;
 	transform:scale(0.8);
 	-webkit-transform:scale(0.8);	
 	animation:
@@ -205,6 +209,7 @@
 
 .reddown {
 	left:1040px;
+	opacity:0.8;
 	z-index:2;	
 	animation:
 		regg_fly 0.25s 0s steps(9) alternate 50,
@@ -228,6 +233,7 @@
 
 .redup {
 	left:1040px;
+	opacity:0.8;
 	z-index:2;	
 	animation:
 		regg_fly 0.25s 0s steps(9) alternate 50,
@@ -251,13 +257,14 @@
 
 .rednodown {
 	left:-180px;
+	opacity:0.6;
 	transform:scale(0.4);
 	-webkit-transform:scale(0.4);	
 	animation:
 		red_dragon_fly 0.25s 0s steps(9) alternate 50,
 		rednodown_move 15s linear;
 	-webkit-animation:
-		redno_dragon_fly 0.25s 0s steps(9) alternate 50,
+		red_dragon_fly 0.25s 0s steps(9) alternate 50,
 		rednodown_move 15s linear;
 }
 
@@ -275,13 +282,14 @@
 
 .rednoup {
 	left:-180px;
+	opacity:0.6;
 	transform:scale(0.4);
 	-webkit-transform:scale(0.4);	
 	animation:
 		red_dragon_fly 0.25s 0s steps(9) alternate 50,
 		rednoup_move 15s linear;
 	-webkit-animation:
-		redno_dragon_fly 0.25s 0s steps(9) alternate 50,
+		red_dragon_fly 0.25s 0s steps(9) alternate 50,
 		rednoup_move 15s linear;
 }
 
