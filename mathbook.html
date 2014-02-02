@@ -3,7 +3,7 @@
 <head>
 	<style type="text/css">
 		.frame {
-			margin-left:17%;
+			float:left;
 			width:66%;
 			border:solid black 1px;
 			font-family:Calibri,Arial, Helvetica, sans-serif;
@@ -16,6 +16,10 @@
 			margin: 2.5%;
 		}
 		
+		.frame div.title {
+			font-size:1.5em;
+		}
+	
 		.frame span {
 			font-family: mistral,Comic Sans MS,cursive,sans-serif;
 			font-size:1.125em;
@@ -27,23 +31,138 @@
     		margin-right: auto
 		}
 		
+		.frame label {
+			margin-left:1em;
+		}
+		
+		.frame #next, #nextLabel{
+			visibility:hidden;
+		}
+		
+		.frame #prev, #prevLabel{
+			visibility:hidden;
+		}
+		
+		.frame div.nav {
+			width:45%;
+			float:left;
+		}
+		
+		.frame div.links {
+			width:45%;
+			float:left;
+		}
+		
+		.frame input.link {
+			margin-left:1em;
+		}
+		
+		.advert {
+			width:14%;
+			float:left;
+			margin-left:1%;
+			margin-right:1%;
+
+			border:solid black 1px;
+		}
+		
+		.menu {
+			width:14%;
+			margin-left:1%;
+			margin-right:1%;
+			float:left;
+			border:solid black 1px;
+		}
+		
 	</style>
+	<script type="text/javascript" src="scripts/pageloader.js"></script>
+	<script type="text/javascript" src="scripts/library.js"></script>
+	<script type="text/javascript">
+		window.onload=setPage;
+		var currentPage=Intro;
+				
+		function nextPage() {
+			currentPage=currentPage.next;
+			setPage();
+		}
+		
+		function prevPage() {
+			currentPage=currentPage.prev;
+			setPage();
+		}
+		
+		function linkPage(id) {
+console.log(currentPage.text);			
+			var n=parseInt(id.substr(4));
+			var linkPage=currentPage.links[n];
+			if(linkPage.loaded) {
+var re = /prevLabel\" for=\"prev\">.*</;				
+console.log(1,linkPage.html.match(re))				
+				var re = /prevLabel\" for=\"prev\">.*<\/label>/;
+				var ns ='prevLabel" for="prev">'+currentPage.text+'</label>';
+console.log(linkPage.html.match(re));				
+				linkPage.html=linkPage.html.replace(re,ns);			
+				linkPage.prev=currentPage;
+				currentPage=linkPage;
+				setPage();
+			}
+			else {
+				loadPage(linkPage,currentPage,true)
+			}
+		}
+				
+		function firstPage() {
+			if(currentPage.loaded) {
+				clearInterval(waitOnFirstPage);
+				setPage();
+			}
+		}
+		
+		function setPage() {			
+			document.getElementById("holder").innerHTML=currentPage.html;
+			if(currentPage.next) {
+				document.getElementById("next").style.visibility='hidden';
+				document.getElementById("nextLabel").style.visibility='hidden';
+				if(currentPage.next.loaded) {
+					document.getElementById("next").style.visibility='visible';
+					document.getElementById("nextLabel").style.visibility='visible';
+					document.getElementById("next").addEventListener('click', nextPage, false);
+				}
+				else {
+					loadPage(currentPage.next,currentPage,false);
+				}
+			}
+			if(currentPage.prev) {
+				document.getElementById("prev").style.visibility='hidden';
+				document.getElementById("prevLabel").style.visibility='hidden';
+				if(currentPage.prev.loaded) {
+					document.getElementById("prev").style.visibility='visible';
+					document.getElementById("prevLabel").style.visibility='visible';
+					document.getElementById("prev").addEventListener('click', prevPage, false);
+				}
+				else {
+					loadPage(currentPage.prev,currentPage,false);
+				}
+			}
+			if(currentPage.links) {
+				for(var i=0; i<currentPage.links.length;i++) {
+					document.getElementById("link"+i).style.visibility='visible';
+					document.getElementById("link"+i+"Label").style.visibility='visible';
+					document.getElementById("link"+i).addEventListener('click', function() {linkPage(this.id);}, false);	
+				}
+			}
+		}
+
+	</script>
 </head>
 <body>
-	<div class="frame">
-		<div>
-			<br>In the very unlikely event of finding yourself in the Magical Domain of Numbers you will find that One is an extremely bright body of swirling, flowing lava that shimmers shades of luminescence ruby reds shot through with glimmering gold, orange and white. From a gash within the lava bright gold lava spills over the top and down the sides turning orange then crimson as it does before flowing to the bottom and back into the core. In this work, for brevity, it will be referred to unflatteringly as a red stone or even shorter as a red one. [For a description of the Domain of Numbers read ‘A Deceit of Numbers'] 
-		</div>
-		<div>
-			<br>One, <span class="number">(+1),  (1)</span> or <span class="number">1</span>, is used to represent one red stone <img src="images/redEgg.png">
-		</div>
-		<div>
-			<br><span class="number">+(+1),  +(1)</span> or <span class="number">+1</span>  represents a red dragon adding one red stone
-			<br><img class="dragon" src="images/add1.png">
-		</div>
-		<div>
-			<br>Treating actions and results as the same :- <span class="number">(+1) = (1) = 1 = +(+1) = +(1) = +1</span>  
-			<br>Note: <span class="number">(+1)</span> and <span class="number">(1)</span>  are rarely used.
-		</div>
+	<div class="menu">
+		jfdha dsksa ces hewiq hrkjsfjdsf hkjdsf jdsf k.jdsf ewkjhf js jdsb csbc sjdfc jdsc jsdc ksjdfwfhds jmxn xmncsjc xjfsh xbvmxbmdsc jhsj jhf jfj dskjfh kjfkjdshfsd hfsdkjf d v f k fdh
 	</div>
+	<div id="holder" class="frame">
+
+	</div>	
+	<div class="advert">
+		jfdha dsksa ces hewiq hrkjsfjdsf hkjdsf jdsf k.jdsf ewkjhf js jdsb csbc sjdfc jdsc jsdc ksjdfwfhds jmxn xmncsjc xjfsh xbvmxbmdsc jhsj jhf jfj dskjfh kjfkjdshfsd hfsdkjf d v f k fdh
+	</div>	
 </body>
