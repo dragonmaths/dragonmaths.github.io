@@ -9,46 +9,51 @@ introhtml += "<div>";
 introhtml += "<br><input id='next' type='button' class='next' value='Next'><label id='nextLabel' for='next'>What is One?</label>";
 introhtml += "</div>";
 
-Intro={
-	page:"Introduction.html",
-	loaded:true,
-	html:introhtml,
-	next:null,
-	prev:null,
-	text:"Introduction",
-	links:null
-};
+library= [
+	Intro={
+		page:"Introduction.html",
+		loaded:true,
+		html:introhtml,
+		next:null,
+		prev:null,
+		text:"Introduction",
+		links:null,
+		main:true
+	},
 
-One={
-	page:"One.html",
-	loaded:false,
-	html:"",
-	next:null,
-	prev:null,
-	text:"What is One?",
-	links:null
-};
+	One={
+		page:"One.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"What is One?",
+		links:null,
+		main:true
+	},
 
-MinusOne={
-	page:"MinusOne.html",
-	loaded:false,
-	html:"",
-	next:null,
-	prev:null,
-	text:"What is Minus One",
-	links:null
-};
+	MinusOne={
+		page:"MinusOne.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"What is Minus One?",
+		links:null,
+		main:true
+	},
 
-Actions={
-	page:"Actions.html",
-	loaded:false,
-	html:"",
-	next:null,
-	prev:null,
-	text:"Actions and Results",
-	links:null
-};
-
+	Actions={
+		page:"Actions.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Actions and Results",
+		links:null,
+		main:false
+	}
+];
 //NEXT
 Intro.next=One;
 One.next=MinusOne;

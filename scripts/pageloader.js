@@ -1,16 +1,17 @@
-function loadPage(book,current,link) {	
+function loadPage(book,current,openpage) {	
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "pages/"+book.page);
 	xhr.onreadystatechange=function() {
 		if (xhr.readyState==4) {
 	   		book.html=xhr.responseText;
 	   		book.loaded=true;
-	   		if(link) {	   			
+	   		if(!book.main) {	   			
 	   			var re = /prevLabel\" for=\"prev\">.*<\/label>/;
-				var ns ='prevLabel" for="prev">'+current.text+'</label>';
-console.log("in",book.html.match(re));				
+				var ns ='prevLabel" for="prev">'+current.text+'</label>';			
 				book.html=book.html.replace(re,ns);			
 				book.prev=current;
+				}
+			if(openpage) {	
 				current=book;
 				currentPage=book;
 	   			setPage();
