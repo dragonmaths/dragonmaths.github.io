@@ -14,7 +14,7 @@ var menuFull=fullMenu();
 
 
 function pageMenu() {
-	var menuhtml="<div class='menuTitle' class='page'>Pages</div>";
+	var menuhtml="<div class='menuTitle'>Pages</div>";
 	for(i=0; i<library.length; i++) {
 		if(library[i].main) {
 			menuhtml+="<div id='page"+i+"' class='page' onclick='openPage(this.id)'>"+library[i].text+"</div>";
@@ -24,7 +24,7 @@ function pageMenu() {
 }
 
 function extraMenu() {
-	var menuhtml="<div class='menuTitle' class='page'>Extras</div>";
+	var menuhtml="<div class='menuTitle'>Extras</div>";
 	for(i=0; i<library.length; i++) {
 		if(!library[i].main) {
 			menuhtml+="<div id='page"+i+"' class='page' onclick='openPage(this.id)'>"+library[i].text+"</div>";

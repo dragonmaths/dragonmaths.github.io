@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#Loadscreen {
+			margin:1% 5% 1% 5%;
+			width:90%;
+			height:96%;
+			background-color:#FFFFFF;
+			z-index: 100;
+		}
+		
+		#Loadscreen img {
+			margin:15% 1% 1% 40%;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="styles/dragonstyles.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/littledragonstyles.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/dragonbackstyles.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/eggstyles.css">
+	<link rel="stylesheet" type="text/css" href="styles/shadowstyles.css">
+	<link rel="stylesheet" type="text/css" href="styles/magic.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/infobox.css"> 
+	
+	<script type="text/javascript" src="scripts/events.js"></script>
+	<script type="text/javascript" src="scripts/eggs.js"></script>
+	<script type="text/javascript" src="scripts/dragonback.js"></script>
+	<script type="text/javascript" src="scripts/zerodragons.js"></script>
+	<script type="text/javascript">
+		var redEggImg=new Image();
+		redEggImg.src="images/redEggLarge.png";
+		var blueEggImg=new Image();
+		blueEggImg.src="images/blueEggLarge.png";
+		var shadowImg=new Image();
+		shadowImg.src="images/shadow.png";
+		var bbe=new Image();
+		bbe.src="images/blue_blue_flow.png";
+		var bre=new Image();
+		bre.src="images/blue_red_flow.png";
+		var rre=new Image();
+		rre.src="images/red_red_flow.png";
+		var rbe=new Image();
+		rbe.src="images/red_blue_flow.png";
+		var bdr=new Image();
+		bdr.src="images/blue_frames.png";
+		var rdr=new Image();
+		rdr.src="images/red_frames.png";
+		var redset=true;
+		var redegg=true;
+		var red1=true;
+		var red_stone_temp, blue_stone_temp;
+		var flames_on=true;
+		var red_count=0;
+		var blue_count=0;
+		var egg_count=0;		
+		window.onload=main;
+	</script>
+</head>
+<body>
+	
+	<div id="Loadscreen">
+		<img src=images/star.gif>
+	</div>
+	
+	<div id="info">
+		<div id="heading"></div>
+	</div>
+	
+	<div id="infotext">
+		<div id="headtext">Dragon Maths<br><span>Basics</span></div>
+		<div id="bodytext">
+			<ol>
+				<li>What do red dragons do?</li>
+				<li>What do blue dragons do?</li>
+				<li>What is the result of adding a red and a blue stone?</li>
+				<li>What if there were no blue dragons?</li>
+			</ol>
+		</div>
+	
+		<div id="adtext">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Dragon Maths -->
+			<ins class="adsbygoogle"
+     			style="display:inline-block;width:300px;height:250px"
+     			data-ad-client="ca-pub-3929117244431707"
+    		 	data-ad-slot="5538034408"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+	
+	<div id="scene_frame" class="frame">
+	 	<div id="scene" class="scene"></div>
+		<div id="dragon_blue"></div>
+		<div id="egg_red"></div>
+		<div id="egg_blue"></div>
+		<div id="egg_red2"></div>
+		<div id="egg_blue2"></div>
+		<div id="dragon_red"></div>
+		<div id="dragon_red2"></div>
+		<div id="dragon_red3"></div>
+		<div id="dragon_red4"></div>
+		<div id="steam"></div>
+		<div id="flames"></div>
+		<div id="steam2"></div>
+		<div id="flames2"></div>
+		<div id="blue_back"></div>
+		<div id="bbegg"></div>
+		<div id="bregg"></div>
+		<div id="rbegg"></div>
+		<div id="rregg"></div>
+	</div>
+	
+	<div id="add3ddown"></div>
+	<div id="add3dmid"></div>
+	<div id="add3dup"></div>
+	
+	<div id="addback">
+		<div id="little_home_red"></div>
+		<div id="little_red"></div>
+		<div id="add"></div>
+		<div id="addover"></div>
+	</div>
+	
+	<div id="sub3ddown"></div>
+	<div id="sub3dmid"></div>
+	<div id="sub3dup"></div>
+	
+	<div id="subback">
+		<div id="little_home_blue"></div>
+		<div id="little_blue"></div>
+		<div id="sub"></div>
+		<div id="subover"></div>
+	</div>
+		
+	<div id="addchoice">
+		<div id='back3D'></div>
+		<div id='blueaddchoice'></div>
+		<div id="redaddchoice"></div>
+		<div id="handaddchoice"></div>
+	</div>
+	
+	
+</body>
+</html>
