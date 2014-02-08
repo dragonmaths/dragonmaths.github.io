@@ -1,147 +1,218 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <head>
 	<style type="text/css">
-		#Loadscreen {
-			margin:1% 5% 1% 5%;
-			width:90%;
-			height:96%;
-			background-color:#FFFFFF;
-			z-index: 100;
+		.frame {
+			float:left;
+			width:98%;
+			margin:auto;
+			margin-top:0.5em;
+			border:solid black 1px;
+			font-family:Calibri,Arial, Helvetica, sans-serif;
+		}
+	
+		.frame div {
+			width:95%;
+			border-top:solid black 1px;
+			margin: 2.5%;
 		}
 		
-		#Loadscreen img {
-			margin:15% 1% 1% 40%;
+		.frame div.title {
+			font-size:1.5em;
 		}
-	</style>
-	<link rel="stylesheet" type="text/css" href="styles/dragonstyles.css"> 
-	<link rel="stylesheet" type="text/css" href="styles/littledragonstyles.css"> 
-	<link rel="stylesheet" type="text/css" href="styles/dragonbackstyles.css"> 
-	<link rel="stylesheet" type="text/css" href="styles/eggstyles.css">
-	<link rel="stylesheet" type="text/css" href="styles/shadowstyles.css">
-	<link rel="stylesheet" type="text/css" href="styles/magic.css"> 
-	<link rel="stylesheet" type="text/css" href="styles/infobox.css"> 
 	
-	<script type="text/javascript" src="scripts/events.js"></script>
-	<script type="text/javascript" src="scripts/eggs.js"></script>
-	<script type="text/javascript" src="scripts/dragonback.js"></script>
-	<script type="text/javascript" src="scripts/zerodragons.js"></script>
-	<script type="text/javascript">
-		var redEggImg=new Image();
-		redEggImg.src="images/redEggLarge.png";
-		var blueEggImg=new Image();
-		blueEggImg.src="images/blueEggLarge.png";
-		var shadowImg=new Image();
-		shadowImg.src="images/shadow.png";
-		var bbe=new Image();
-		bbe.src="images/blue_blue_flow.png";
-		var bre=new Image();
-		bre.src="images/blue_red_flow.png";
-		var rre=new Image();
-		rre.src="images/red_red_flow.png";
-		var rbe=new Image();
-		rbe.src="images/red_blue_flow.png";
-		var bdr=new Image();
-		bdr.src="images/blue_frames.png";
-		var rdr=new Image();
-		rdr.src="images/red_frames.png";
-		var redset=true;
-		var redegg=true;
-		var red1=true;
-		var red_stone_temp, blue_stone_temp;
-		var flames_on=true;
-		var red_count=0;
-		var blue_count=0;
-		var egg_count=0;		
-		window.onload=main;
-	</script>
+		.frame span {
+			font-family: mistral,Comic Sans MS,cursive,sans-serif;
+			font-size:1.125em;
+		}
+		
+		.frame img.dragon {
+			display: block;
+    		margin-left: auto;
+    		margin-right: auto
+		}
+		
+		.frame label {
+			margin-left:1em;
+		}
+		
+		.frame #next, #nextLabel{
+			visibility:hidden;
+		}
+		
+		.frame #prev, #prevLabel{
+			visibility:hidden;
+		}
+		
+		.frame input.link {
+			margin-left:1em;
+		}
+		
+		.nav, .links, .advert, .menuholder {
+			width:98%;
+			margin:auto;
+			float:none;
+		}
+		
+		.advert {
+			margin-top:0.5em;
+		}
+		
+		.menu {
+			width:100%;
+			font-family:Calibri,Arial, Helvetica, sans-serif;
+		}
+		
+		.menu div.page {
+			width:98%;
+			margin:auto;
+			background-color:#EEEEEE;
+			padding:0.075em;
+			border:solid 1px black;
+		}
+		
+		.menu div.page:hover {
+			background-color:#444444;
+			color:#FFFFFF;
+			cursor:pointer;
+		}
+		
+		.menu div.shortTitle {
+			text-align: center;
+			font-size:1.1em;
+			background-color:#BBBBBB;
+			border:solid 1px black;
+			width:30%;
+			margin-left:1em;
+			float:left;
+		}
+		
+		.menu div.blankTitle {
+			width:30%;
+			margin-left:1em;
+			float:left;
+		}
+		
+		.menu div.menuTitle {
+			width:98%;
+			margin:auto;
+			text-align: center;
+			font-size:1.1em;
+			padding:0.075em;
+			background-color:#BBBBBB;
+			border:solid 1px black; 
+		}
+
+		.menu div.page:hover {
+			background-color:#444444;
+			color:#FFFFFF;
+			cursor:pointer;
+		}
+		
+		.menu div.page a:link    {color:#444444;}
+		.menu div.page a:visited {color:#444444;}
+		.menu div.page a:hover {color:#FFFFFF;}
+		
+		#heading {
+			width:80%;
+			display:block;
+			margin:auto;
+			font-size:1.3em;
+		}
+		
+		@media screen and (min-width: 50em) {
+			.frame {
+				width:66%;
+				margin-left:0%;
+				margin-right:0%;
+				margin-top:0%;
+			}
+			
+			.frame div.nav {
+				width:45%;
+				float:left;
+			}
+		
+			.frame div.links {
+				width:45%;
+				float:left;
+			}
+		
+			.frame input.link {
+				margin-left:1em;
+			}
+		
+			.advert {
+				width:14%;
+				float:left;
+				margin-left:1%;
+				margin-right:1%;
+				margin-top:0%;
+				border:solid black 1px;
+			}
+		
+			.menuholder {
+				width:14%;
+				margin-left:1%;
+				margin-right:1%;
+				float:left;
+			}
+			
+			.menu div.page {
+				width:98%;
+				margin:auto;
+				background-color:#EEEEEE;
+				padding:0.075em;
+				border:solid 1px black;
+			}
+		}
+		
+	</style>
+
 </head>
 <body>
-	
-	<div id="Loadscreen">
-		<img src=images/star.gif>
-	</div>
-	
-	<div id="info">
-		<div id="heading"></div>
-	</div>
-	
-	<div id="infotext">
-		<div id="headtext">Dragon Maths<br><span>Basics</span></div>
-		<div id="bodytext">
-			<ol>
-				<li><a href="mathbook.html">treatise</a></li>
-				<li>What do red dragons do?</li>
-				<li>What do blue dragons do?</li>
-				<li>What is the result of adding a red and a blue stone?</li>
-				<li>What if there were no blue dragons?</li>
-			</ol>
-		</div>
-	
-		<div id="adtext">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- Dragon Maths -->
-			<ins class="adsbygoogle"
-     			style="display:inline-block;width:300px;height:250px"
-     			data-ad-client="ca-pub-3929117244431707"
-    		 	data-ad-slot="5538034408"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+	<div id="menuholder" class="menuholder"> 
+		<div class='menu'>
+			<div class='menuTitle' >Links</div>
+			<div class='page' onclick='window.open("mathbook.html")'>Treatise</div>
+			<div class='page' >Story</div>
+			<div class='page' onclick='window.open("dragonmaths.html")'>Dragon Maths</div>
 		</div>
 	</div>
-	
-	<div id="scene_frame" class="frame">
-	 	<div id="scene" class="scene"></div>
-		<div id="dragon_blue"></div>
-		<div id="egg_red"></div>
-		<div id="egg_blue"></div>
-		<div id="egg_red2"></div>
-		<div id="egg_blue2"></div>
-		<div id="dragon_red"></div>
-		<div id="dragon_red2"></div>
-		<div id="dragon_red3"></div>
-		<div id="dragon_red4"></div>
-		<div id="steam"></div>
-		<div id="flames"></div>
-		<div id="steam2"></div>
-		<div id="flames2"></div>
-		<div id="blue_back"></div>
-		<div id="bbegg"></div>
-		<div id="bregg"></div>
-		<div id="rbegg"></div>
-		<div id="rregg"></div>
-	</div>
-	
-	<div id="add3ddown"></div>
-	<div id="add3dmid"></div>
-	<div id="add3dup"></div>
-	
-	<div id="addback">
-		<div id="little_home_red"></div>
-		<div id="little_red"></div>
-		<div id="add"></div>
-		<div id="addover"></div>
-	</div>
-	
-	<div id="sub3ddown"></div>
-	<div id="sub3dmid"></div>
-	<div id="sub3dup"></div>
-	
-	<div id="subback">
-		<div id="little_home_blue"></div>
-		<div id="little_blue"></div>
-		<div id="sub"></div>
-		<div id="subover"></div>
-	</div>
-		
-	<div id="addchoice">
-		<div id='back3D'></div>
-		<div id='blueaddchoice'></div>
-		<div id="redaddchoice"></div>
-		<div id="handaddchoice"></div>
-	</div>
-	
-	
+	<div id="holder" class="frame">
+		<div class="title">
+			<br>Dragon Maths an Overview
+		</div>
+		<div>
+			<br>Friends from University are friends forever even if you rarely see or here from them. It was in September 2013 that Greg contacted me. Greg is now a forensic 
+			manuscript examiner for a major university. In a collection of old manuscripts that had been bequeathed to the University was one he thought might amuse me. It proported to be a copy
+			of an earlier document which itself was a copy of a still earlier one.
+			
+			<p>It was headed
+			<br><br><span id="heading">Bibliotheca Alexandrina scriptam circa librum draco ex numeris.</span><br></p>
+			
+			<p>Which translates to 'Copied from a scroll from the Library of Alexandria which concerns dragon numbers.'</p>
+			<p>At first Greg though this was some treatise about how many dragons were to be found in the world but further translation of the scroll show it to be rather the Mathematics of Dragons 
+				rather than their quantity. The scroll contains a text that teaches mathematics up to the level of basic algebra and an autobiography of a witch named Gnurter who claims to have introduced numbers into our world.
+			<br>Greg asked me to check out whether the mathematics in the scoll made sense and to see if I could improve on the translation of that part of the text. Greg continues to examine the original scroll and further references within it to see what
+			evidence there is that it is a copy from a document that was once in the Library of Alexandria. In the meantime the University has given me permission to make the contents available to the wider world to which purpose I have created this site. </p>
+			<p>The treatise on mathematics gives an interesting and useful way of thinking about numbers and the techniques for handling them. The story 'The Deceit of Numbers' gives a possible origin for this way of thinking, in which numbers are physical objects found in 'The Domain of Numbers'.</p>
+			<p> I have produced an interactive site which is an attempt to bring the Domain of Numbers alive. Unfortunately my lack of expertise in this area means that currently this site only works succesfully in the most current versions of Firefox, Internet Explorer and Chrome browsers on a desktop or laptop.</p>
+			
+			<p><span id="heading">John King January 2014</span></p>
+		</div> 
+	</div>	
+	<div class="advert">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Responsive -->
+		<ins class="adsbygoogle"
+     		style="display:block"
+    		 data-ad-client="ca-pub-3929117244431707"
+    		 data-ad-slot="4115112804"
+     		data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>	
 </body>
-</html>

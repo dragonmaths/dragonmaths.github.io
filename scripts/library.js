@@ -42,7 +42,41 @@ library= [
 		links:null,
 		main:true
 	},
-
+	
+	Zero={
+		page:"Zero.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Zero",
+		links:null,
+		main:true
+	},
+	
+	Basics={
+		page:"Basics.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"First Rule",
+		links:null,
+		main:true
+	},	
+	
+	Tens={
+		page:"Tens.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Beyond Nine",
+		links:null,
+		main:true
+	},
+		
+//Extra Pages
 	Actions={
 		page:"Actions.html",
 		loaded:false,
@@ -52,19 +86,49 @@ library= [
 		text:"Actions and Results",
 		links:null,
 		main:false
-	}
+	},
+	
+	Counts={
+		page:"Counts.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Numbers and Counting",
+		links:null,
+		main:false
+	},
+	
+	Thousand={
+		page:"Thousand.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Beyond 1000",
+		links:null,
+		main:false
+	}	
 ];
 //NEXT
 Intro.next=One;
 One.next=MinusOne;
+MinusOne.next=Zero;
+Zero.next=Basics;
+Basics.next=Tens;
 
 //PREV
 One.prev=Intro;
 MinusOne.prev=One;
+Zero.prev=MinusOne;
+Basics.prev=Zero;
+Tens.prev=Basics;
 
 //LINKS
 One.links=[Actions];
 MinusOne.links=[Actions];
+Basics.links=[Counts];
+Tens.links=[Thousand];
 
 
 
