@@ -75,6 +75,28 @@ library= [
 		links:null,
 		main:true
 	},
+	
+	AddLarge={
+		page:"AddLarge.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Adding Large Numbers",
+		links:null,
+		main:true
+	},
+	
+	AddColumns={
+		page:"AddColumns.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Adding in Columns",
+		links:null,
+		main:true
+	},
 		
 //Extra Pages
 	Actions={
@@ -99,6 +121,28 @@ library= [
 		main:false
 	},
 	
+	Counting={
+		page:"Counting.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"What Counts?",
+		links:null,
+		main:false
+	},
+	
+	ToTwenty={
+		page:"Add1stTen.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Add To Twenty",
+		links:null,
+		main:false
+	},	
+	
 	Thousand={
 		page:"Thousand.html",
 		loaded:false,
@@ -116,6 +160,8 @@ One.next=MinusOne;
 MinusOne.next=Zero;
 Zero.next=Basics;
 Basics.next=Tens;
+Tens.next=AddLarge;
+AddLarge.next=AddColumns;
 
 //PREV
 One.prev=Intro;
@@ -123,13 +169,15 @@ MinusOne.prev=One;
 Zero.prev=MinusOne;
 Basics.prev=Zero;
 Tens.prev=Basics;
+AddLarge.prev=Tens;
+AddColumns.prev=AddLarge;
 
 //LINKS
 One.links=[Actions];
 MinusOne.links=[Actions];
 Basics.links=[Counts];
-Tens.links=[Thousand];
-
-
+Tens.links=[Thousand,Counting];
+Counts.links=[Counting];
+AddLarge.links=[Counting];
 
 
