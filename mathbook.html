@@ -177,7 +177,8 @@
 		}
 		
 		function linkPage(id) {			
-			var n=parseInt(id.substr(4));		
+			var n=parseInt(id.substr(4));
+console.log(id,n);					
 			var linkPage=currentPage.links[n];
 			if(linkPage.loaded) {	
 				var re = /prevLabel\" for=\"prev\">.*<\/label>/;

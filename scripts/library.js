@@ -97,6 +97,61 @@ library= [
 		links:null,
 		main:true
 	},
+	
+	TakeAway={
+		page:"TakeAway.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away",
+		links:null,
+		main:true
+	},
+	
+	TakeMethods={
+		page:"TakeMethods.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away Methods",
+		links:null,
+		main:true
+	},
+	
+	TakeAwayStart={
+		page:"TakeAwayStart.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away Start",
+		links:null,
+		main:true
+	},
+	
+	TakeAwayMethod1={
+		page:"TakeAwayMethod1.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away with Dragons Method 1",
+		links:null,
+		main:true
+	},
+	
+	Method1Cols={
+		page:"Method1Cols.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away Method 1 in Columns",
+		links:null,
+		main:true
+	},
 		
 //Extra Pages
 	Actions={
@@ -152,6 +207,28 @@ library= [
 		text:"Beyond 1000",
 		links:null,
 		main:false
+	},
+	
+	BeyondTake={
+		page:"BeyondTake.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away Beyond One",
+		links:null,
+		main:false
+	},
+	
+	Method1Problem={
+		page:"Method1Problem.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Problems with Method 1",
+		links:null,
+		main:false
 	}	
 ];
 //NEXT
@@ -162,6 +239,11 @@ Zero.next=Basics;
 Basics.next=Tens;
 Tens.next=AddLarge;
 AddLarge.next=AddColumns;
+AddColumns.next=TakeAway;
+TakeAway.next=TakeMethods;
+TakeMethods.next=TakeAwayStart;
+TakeAwayStart.next=TakeAwayMethod1;
+TakeAwayMethod1.next=Method1Cols;
 
 //PREV
 One.prev=Intro;
@@ -171,6 +253,11 @@ Basics.prev=Zero;
 Tens.prev=Basics;
 AddLarge.prev=Tens;
 AddColumns.prev=AddLarge;
+TakeAway.prev=AddColumns;
+TakeMethods.prev=TakeAway;
+TakeAwayStart.prev=TakeMethods;
+TakeAwayMethod1.prev=TakeAwayStart;
+Method1Cols.prev=TakeAwayMethod1;
 
 //LINKS
 One.links=[Actions];
@@ -178,6 +265,10 @@ MinusOne.links=[Actions];
 Basics.links=[Counts];
 Tens.links=[Thousand,Counting];
 Counts.links=[Counting];
-AddLarge.links=[Counting];
+AddLarge.links=[Counting,ToTwenty];
+TakeAway.links=[Actions,BeyondTake];
+TakeMethods.links=[ToTwenty];
+ToTwenty.links=[Counting];
+Method1Cols.links=[Method1Problem];
 
 
