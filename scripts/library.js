@@ -152,6 +152,39 @@ library= [
 		links:null,
 		main:true
 	},
+	
+	TakeAwayMethod2={
+		page:"TakeAwayMethod2.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away with Dragons Method 2",
+		links:null,
+		main:true
+	},
+	
+	Method2Cols={
+		page:"Method2Cols.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away Method 2 in Columns",
+		links:null,
+		main:true
+	},
+	
+	TakeAwayMethod3={
+		page:"TakeAwayMethod3.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Taking Away Method 3",
+		links:null,
+		main:true
+	},
 		
 //Extra Pages
 	Actions={
@@ -229,6 +262,17 @@ library= [
 		text:"Problems with Method 1",
 		links:null,
 		main:false
+	},
+	
+	Method2Advantage={
+		page:"Method2Advantage.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Advantage of Method 2",
+		links:null,
+		main:false
 	}	
 ];
 //NEXT
@@ -244,6 +288,9 @@ TakeAway.next=TakeMethods;
 TakeMethods.next=TakeAwayStart;
 TakeAwayStart.next=TakeAwayMethod1;
 TakeAwayMethod1.next=Method1Cols;
+Method1Cols.next=TakeAwayMethod2;
+TakeAwayMethod2.next=Method2Cols;
+Method2Cols.next=TakeAwayMethod3;
 
 //PREV
 One.prev=Intro;
@@ -258,6 +305,9 @@ TakeMethods.prev=TakeAway;
 TakeAwayStart.prev=TakeMethods;
 TakeAwayMethod1.prev=TakeAwayStart;
 Method1Cols.prev=TakeAwayMethod1;
+TakeAwayMethod2.prev=Method1Cols;
+Method2Cols.prev=TakeAwayMethod2;
+TakeAwayMethod3.prev=Method2Cols;
 
 //LINKS
 One.links=[Actions];
