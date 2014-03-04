@@ -9,18 +9,7 @@ introhtml += "<div>";
 introhtml += "<br><input id='next' type='button' class='next' value='Next'><label id='nextLabel' for='next'>What is One?</label>";
 introhtml += "</div>";
 
-library= [
-	Intro={
-		page:"Introduction.html",
-		loaded:true,
-		html:introhtml,
-		next:null,
-		prev:null,
-		text:"Introduction",
-		links:null,
-		main:true
-	},
-
+NumbersLibrary=[
 	One={
 		page:"One.html",
 		loaded:false,
@@ -28,8 +17,7 @@ library= [
 		next:null,
 		prev:null,
 		text:"What is One?",
-		links:null,
-		main:true
+		links:null
 	},
 
 	MinusOne={
@@ -39,8 +27,7 @@ library= [
 		next:null,
 		prev:null,
 		text:"What is Minus One?",
-		links:null,
-		main:true
+		links:null
 	},
 	
 	Zero={
@@ -50,8 +37,7 @@ library= [
 		next:null,
 		prev:null,
 		text:"Zero",
-		links:null,
-		main:true
+		links:null
 	},
 	
 	Basics={
@@ -61,8 +47,7 @@ library= [
 		next:null,
 		prev:null,
 		text:"First Rule",
-		links:null,
-		main:true
+		links:null
 	},	
 	
 	Tens={
@@ -72,10 +57,11 @@ library= [
 		next:null,
 		prev:null,
 		text:"Beyond Nine",
-		links:null,
-		main:true
-	},
-	
+		links:null
+	}
+];
+
+AddLibrary=[
 	AddLarge={
 		page:"AddLarge.html",
 		loaded:false,
@@ -83,8 +69,7 @@ library= [
 		next:null,
 		prev:null,
 		text:"Adding Large Numbers",
-		links:null,
-		main:true
+		links:null
 	},
 	
 	AddColumns={
@@ -94,19 +79,19 @@ library= [
 		next:null,
 		prev:null,
 		text:"Adding in Columns",
-		links:null,
-		main:true
-	},
-	
+		links:null
+	}
+];
+
+TakeLibrary=[
 	TakeAway={
 		page:"TakeAway.html",
 		loaded:false,
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away",
-		links:null,
-		main:true
+		text:"Overview",
+		links:null
 	},
 	
 	TakeMethods={
@@ -115,9 +100,8 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away Methods",
-		links:null,
-		main:true
+		text:"Methods",
+		links:null
 	},
 	
 	TakeAwayStart={
@@ -126,9 +110,8 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away Start",
-		links:null,
-		main:true
+		text:"Start",
+		links:null
 	},
 	
 	TakeAwayMethod1={
@@ -137,9 +120,8 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away with Dragons Method 1",
-		links:null,
-		main:true
+		text:"Dragons Method 1",
+		links:null
 	},
 	
 	Method1Cols={
@@ -148,9 +130,8 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away Method 1 in Columns",
-		links:null,
-		main:true
+		text:"Method 1 in Columns",
+		links:null
 	},
 	
 	TakeAwayMethod2={
@@ -159,9 +140,8 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away with Dragons Method 2",
-		links:null,
-		main:true
+		text:"Dragons Method 2",
+		links:null
 	},
 	
 	Method2Cols={
@@ -170,9 +150,8 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away Method 2 in Columns",
-		links:null,
-		main:true
+		text:"Method 2 in Columns",
+		links:null
 	},
 	
 	TakeAwayMethod3={
@@ -181,11 +160,46 @@ library= [
 		html:"",
 		next:null,
 		prev:null,
-		text:"Taking Away Method 3",
+		text:"Method 3",
+		links:null
+	}
+];
+
+library= [
+	Intro={
+		page:"Intro.html",
+		loaded:true,
+		html:introhtml,
+		next:null,
+		prev:null,
+		text:"Introduction",
 		links:null,
-		main:true
+		main:true,
+		sub:null,
+	},
+	
+	Numbers={
+		sub:NumbersLibrary,
+		text:'Numbers',
+		main:true,
+		open:false
+	},
+
+	
+	Adding={
+		sub:AddLibrary,
+		text:'Adding',
+		main:true,
+		open:false
 	},
 		
+	Taking={
+		sub:TakeLibrary,
+		text:'Taking Away',
+		main:true,
+		open:false
+	},
+	
 //Extra Pages
 	Actions={
 		page:"Actions.html",
@@ -273,8 +287,33 @@ library= [
 		text:"Advantage of Method 2",
 		links:null,
 		main:false
+	},
+	
+	TakeAwayLarge={
+		page:"TakeAwayLarge.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Take Larger from Smaller",
+		links:null,
+		main:false
+	},
+	
+	PosNegInt={
+		page:"PosNegInt.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Minus and other words",
+		links:null,
+		main:false
 	}	
 ];
+
+
+
 //NEXT
 Intro.next=One;
 One.next=MinusOne;
@@ -316,9 +355,13 @@ Basics.links=[Counts];
 Tens.links=[Thousand,Counting];
 Counts.links=[Counting];
 AddLarge.links=[Counting,ToTwenty];
-TakeAway.links=[Actions,BeyondTake];
+TakeAway.links=[Actions,BeyondTake,PosNegInt];
 TakeMethods.links=[ToTwenty];
 ToTwenty.links=[Counting];
-Method1Cols.links=[Method1Problem];
-
+Method1Cols.links=[Method1Problem,TakeAwayLarge];
+TakeAwayStart.links=[TakeAwayLarge];
+TakeAwayMethod1.links=[TakeAwayLarge];
+TakeAwayMethod2.links=[TakeAwayLarge];
+Method2Cols.links=[Method2Advantage,TakeAwayLarge];
+TakeAwayMethod3.links=[TakeAwayLarge];
 
