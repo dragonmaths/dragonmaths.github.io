@@ -17,6 +17,7 @@ NumbersLibrary=[
 		next:null,
 		prev:null,
 		text:"What is One?",
+		main:true,
 		links:null
 	},
 
@@ -27,6 +28,7 @@ NumbersLibrary=[
 		next:null,
 		prev:null,
 		text:"What is Minus One?",
+		main:true,
 		links:null
 	},
 	
@@ -37,6 +39,7 @@ NumbersLibrary=[
 		next:null,
 		prev:null,
 		text:"Zero",
+		main:true,
 		links:null
 	},
 	
@@ -47,6 +50,7 @@ NumbersLibrary=[
 		next:null,
 		prev:null,
 		text:"First Rule",
+		main:true,
 		links:null
 	},	
 	
@@ -57,6 +61,7 @@ NumbersLibrary=[
 		next:null,
 		prev:null,
 		text:"Beyond Nine",
+		main:true,
 		links:null
 	}
 ];
@@ -69,6 +74,7 @@ AddLibrary=[
 		next:null,
 		prev:null,
 		text:"Adding Large Numbers",
+		main:true,
 		links:null
 	},
 	
@@ -79,6 +85,7 @@ AddLibrary=[
 		next:null,
 		prev:null,
 		text:"Adding in Columns",
+		main:true,
 		links:null
 	}
 ];
@@ -91,6 +98,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Overview",
+		main:true,
 		links:null
 	},
 	
@@ -101,6 +109,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Methods",
+		main:true,
 		links:null
 	},
 	
@@ -111,6 +120,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Start",
+		main:true,
 		links:null
 	},
 	
@@ -121,6 +131,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Dragons Method 1",
+		main:true,
 		links:null
 	},
 	
@@ -131,6 +142,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Method 1 in Columns",
+		main:true,
 		links:null
 	},
 	
@@ -141,6 +153,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Dragons Method 2",
+		main:true,
 		links:null
 	},
 	
@@ -151,6 +164,7 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Method 2 in Columns",
+		main:true,
 		links:null
 	},
 	
@@ -161,6 +175,43 @@ TakeLibrary=[
 		next:null,
 		prev:null,
 		text:"Method 3",
+		main:true,
+		links:null
+	}
+];
+
+
+MultLibrary=[
+	RepeatAdd={
+		page:"RepeatAdd.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Repeating Adding",
+		main:true,
+		links:null
+	},
+	
+	RepeatSub={
+		page:"RepeatSub.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Repeating Taking Away",
+		main:true,
+		links:null
+	},
+	
+	OrderMatters={
+		page:"OrderMatters.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Does the Order Matter?",
+		main:true,
 		links:null
 	}
 ];
@@ -199,6 +250,37 @@ library= [
 		main:true,
 		open:false
 	},
+	
+	Mult={
+		sub:MultLibrary,
+		text:'Multiplying',
+		main:true,
+		open:false
+	},
+	
+	NoMoreBlueDragons={
+		page:"NoMoreBlueDragons.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"No to Blue Dragons",
+		links:null,
+		main:true,
+		sub:null,
+	},
+	
+	Boxes={
+		page:"Boxes.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Box World",
+		links:null,
+		main:true,
+		sub:null,
+	},	
 	
 //Extra Pages
 	Actions={
@@ -309,7 +391,18 @@ library= [
 		text:"Minus and other words",
 		links:null,
 		main:false
-	}	
+	},
+	
+	MultTables={
+		page:"MultTables.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Multiplication Tables",
+		links:null,
+		main:false
+	},	
 ];
 
 
@@ -330,6 +423,11 @@ TakeAwayMethod1.next=Method1Cols;
 Method1Cols.next=TakeAwayMethod2;
 TakeAwayMethod2.next=Method2Cols;
 Method2Cols.next=TakeAwayMethod3;
+TakeAwayMethod3.next=RepeatAdd;
+RepeatAdd.next=RepeatSub;
+RepeatSub.next=OrderMatters;
+OrderMatters.next=NoMoreBlueDragons;
+NoMoreBlueDragons.next=Boxes;
 
 //PREV
 One.prev=Intro;
@@ -347,6 +445,11 @@ Method1Cols.prev=TakeAwayMethod1;
 TakeAwayMethod2.prev=Method1Cols;
 Method2Cols.prev=TakeAwayMethod2;
 TakeAwayMethod3.prev=Method2Cols;
+RepeatAdd.prev=TakeAwayMethod3;
+RepeatSub.prev=RepeatAdd;
+OrderMatters.prev=RepeatSub;
+NoMoreBlueDragons.prev=OrderMatters;
+Boxes.prev=NoMoreBlueDragons;
 
 //LINKS
 One.links=[Actions];
