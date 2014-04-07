@@ -213,7 +213,29 @@ MultLibrary=[
 		text:"Does the Order Matter?",
 		main:true,
 		links:null
-	}
+	},
+	
+	ByTen={
+		page:"ByTen.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"By Ten",
+		main:true,
+		links:null
+	},
+	
+	MultLarge={
+		page:"MultLarge.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Multiplying Large Numbers",
+		main:true,
+		links:null
+	}	
 ];
 
 library= [
@@ -426,7 +448,9 @@ Method2Cols.next=TakeAwayMethod3;
 TakeAwayMethod3.next=RepeatAdd;
 RepeatAdd.next=RepeatSub;
 RepeatSub.next=OrderMatters;
-OrderMatters.next=NoMoreBlueDragons;
+OrderMatters.next=ByTen;
+ByTen.next=MultLarge;
+MultLarge.next=NoMoreBlueDragons;
 NoMoreBlueDragons.next=Boxes;
 
 //PREV
@@ -448,7 +472,9 @@ TakeAwayMethod3.prev=Method2Cols;
 RepeatAdd.prev=TakeAwayMethod3;
 RepeatSub.prev=RepeatAdd;
 OrderMatters.prev=RepeatSub;
-NoMoreBlueDragons.prev=OrderMatters;
+ByTen.prev=OrderMatters;
+MultLarge.prev=ByTen;
+NoMoreBlueDragons.prev=MultTen;
 Boxes.prev=NoMoreBlueDragons;
 
 //LINKS
