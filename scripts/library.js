@@ -119,7 +119,7 @@ TakeLibrary=[
 		html:"",
 		next:null,
 		prev:null,
-		text:"Start",
+		text:"Take Away Start",
 		main:true,
 		links:null
 	},
@@ -238,6 +238,19 @@ MultLibrary=[
 	}	
 ];
 
+DivideLibrary=[
+	Puzzle1={
+		page:"Puzzle1.html",
+		loaded:false,
+		html:"",
+		next:null,
+		prev:null,
+		text:"Factors and Multiples",
+		main:true,
+		links:null
+	}	
+];
+
 library= [
 	Intro={
 		page:"Intro.html",
@@ -276,6 +289,13 @@ library= [
 	Mult={
 		sub:MultLibrary,
 		text:'Multiplying',
+		main:true,
+		open:false
+	},
+	
+	Divide={
+		sub:DivideLibrary,
+		text:'Dividing',
 		main:true,
 		open:false
 	},
@@ -450,7 +470,7 @@ RepeatAdd.next=RepeatSub;
 RepeatSub.next=OrderMatters;
 OrderMatters.next=ByTen;
 ByTen.next=MultLarge;
-MultLarge.next=NoMoreBlueDragons;
+MultLarge.next=Puzzle1;
 NoMoreBlueDragons.next=Boxes;
 
 //PREV
@@ -474,12 +494,13 @@ RepeatSub.prev=RepeatAdd;
 OrderMatters.prev=RepeatSub;
 ByTen.prev=OrderMatters;
 MultLarge.prev=ByTen;
-NoMoreBlueDragons.prev=MultTen;
+Puzzle1.prev=MultLarge;
 Boxes.prev=NoMoreBlueDragons;
 
 //LINKS
 One.links=[Actions];
 MinusOne.links=[Actions];
+Zero.links=[Counts];
 Basics.links=[Counts];
 Tens.links=[Thousand,Counting];
 Counts.links=[Counting];
@@ -487,6 +508,7 @@ AddLarge.links=[Counting,ToTwenty];
 TakeAway.links=[Actions,BeyondTake,PosNegInt];
 TakeMethods.links=[ToTwenty];
 ToTwenty.links=[Counting];
+PosNegInt.links=[Actions];
 Method1Cols.links=[Method1Problem,TakeAwayLarge];
 TakeAwayStart.links=[TakeAwayLarge];
 TakeAwayMethod1.links=[TakeAwayLarge];
