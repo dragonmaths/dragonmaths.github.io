@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <title>Babylon - Realistic Earth</title>
+	  
+	  <style>
+		html, body {
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		#renderCanvas {
+			width: 100%;
+			height: 100%;
+			touch-action: none;
+		}
+	</style>
+	
+	<script src="babylon.js"></script>
+	
+
+	
+   </head>
+
+   <body>
+   
+	<canvas id="renderCanvas"></canvas>
+	
+	<script>
+	
+	 // Get the canvas element from our HTML above
+	 var canvas = document.getElementById("renderCanvas");
+
+	 // Load the BABYLON 3D engine
+	 var engine = new BABYLON.Engine(canvas, true);
+	
+	 var createScene = function () {
+	 
+		var scene = new BABYLON.Scene(engine);
+
+		// Light
+		var spot = new BABYLON.PointLight("spot", new BABYLON.Vector3(0, 0, -50), scene);
+		spot.diffuse = new BABYLON.Color3(1, 1, 1);
+		spot.specular = new BABYLON.Color3(0, 0, 0);
+
+		// Camera
+		var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI/2, Math.PI/2, 100, BABYLON.Vector3.Zero(), scene);
+		camera.lowerBetaLimit = 0.1;
+		camera.upperBetaLimit = (Math.PI / 2) * 0.9;
+		camera.lowerRadiusLimit = 30;
+		camera.upperRadiusLimit = 150;
+		camera.upVector = new BABYLON.Vector3(0, -1, 0);
+		camera.attachControl(canvas, true);
+
+		 // Ground
+		var earthMaterial = new BABYLON.StandardMaterial("earth", scene);
+		earthMaterial.diffuseTexture = new BABYLON.Texture("images/earth.jpg", scene);
+
+		var earth = BABYLON.MeshBuilder.CreateSphere("earth", {diameter: 25}, scene, false);
+		earth.material = earthMaterial;
+
+		//Sphere to see the light's position
+		var sun = BABYLON.MeshBuilder.CreateSphere("sun", {diameter: 5}, scene);
+		sun.material = new BABYLON.StandardMaterial("sun", scene);
+		sun.material.emissiveColor = new BABYLON.Color3(1, 1, 0);
+
+		// Skybox
+		var skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {size:1000.0}, scene);
+		var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+		skyboxMaterial.backFaceCulling = false;
+		//HDR Image from http://hdrlib.com/  under licence https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+		skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("images/stars.hdr", scene, 512);
+		skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+		skyboxMaterial.diffuseColor = new BABYLON.Color3(1, 1, 1);
+		skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+		skyboxMaterial.disableLighting = true;
+		skybox.material = skyboxMaterial;
+		
+		var theta = -Math.PI/2;
+		var mu = 0.5;
+		var r = 50;
+		//Sun animation
+		scene.registerBeforeRender(function () {
+        sun.position = spot.position
+		theta += 0.025
+        spot.position.x = r * Math.cosh(mu) * Math.cos(theta);
+		spot.position.z = r * Math.sinh(mu) * Math.sin(theta);
+		spot.position.y = r * Math.cos(theta)/2
+		console.log(spot.position);
+        
+		});
+
+		return scene
+	 }
+	
+	  // Now, call the createScene function that you just finished creating
+	  var scene = createScene();
+			
+	  // Register a render loop to repeatedly render the scene
+	  engine.runRenderLoop(function () {
+		scene.render();
+	  });
+		
+	  // Watch for browser/canvas resize events
+	  window.addEventListener("resize", function () {
+		engine.resize();
+	  });
+	</script>
+   
+   </body>
+
+</html>
